@@ -1,0 +1,3676 @@
+{
+  "registrations": {
+    "bevy_ui::ui_node::GridTrack": {
+      "info": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "min_sizing_function",
+            "type_path": "bevy_ui::ui_node::MinTrackSizingFunction",
+            "docs": null
+          },
+          {
+            "name": "max_sizing_function",
+            "type_path": "bevy_ui::ui_node::MaxTrackSizingFunction",
+            "docs": null
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_ui::ui_node::GridTrack",
+        "short_type_path": "GridTrack",
+        "ident": "GridTrack",
+        "crate_name": "bevy_ui",
+        "module_path": "bevy_ui::ui_node"
+      },
+      "default": "{\"bevy_ui::ui_node::GridTrack\":{\"min_sizing_function\":\"Auto\",\"max_sizing_function\":\"Auto\"}}",
+      "docs": " A [`GridTrack`] is a Row or Column of a CSS Grid. This struct specifies what size the track should be.\n See below for the different \"track sizing functions\" you can specify.",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_ui::ui_node::FlexDirection": {
+      "info": {
+        "kind": "enum",
+        "variants": [
+          {
+            "kind": "unit",
+            "name": "Row",
+            "docs": " Same way as text direction along the main axis."
+          },
+          {
+            "kind": "unit",
+            "name": "Column",
+            "docs": " Flex from top to bottom."
+          },
+          {
+            "kind": "unit",
+            "name": "RowReverse",
+            "docs": " Opposite way as text direction along the main axis."
+          },
+          {
+            "kind": "unit",
+            "name": "ColumnReverse",
+            "docs": " Flex from bottom to top."
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_ui::ui_node::FlexDirection",
+        "short_type_path": "FlexDirection",
+        "ident": "FlexDirection",
+        "crate_name": "bevy_ui",
+        "module_path": "bevy_ui::ui_node"
+      },
+      "default": "{\"bevy_ui::ui_node::FlexDirection\":\"Row\"}",
+      "docs": " Defines how flexbox items are ordered within a flexbox",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "alloc::vec::Vec<bevy_ui::ui_node::RepeatedGridTrack>": {
+      "info": {
+        "kind": "list",
+        "item_type_path": "bevy_ui::ui_node::RepeatedGridTrack"
+      },
+      "path_table": {
+        "path": "alloc::vec::Vec<bevy_ui::ui_node::RepeatedGridTrack>",
+        "short_type_path": "Vec<RepeatedGridTrack>",
+        "ident": "Vec",
+        "crate_name": "alloc",
+        "module_path": "alloc::vec"
+      },
+      "default": null,
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_sprite::texture_slice::slicer::TextureSlicer": {
+      "info": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "border",
+            "type_path": "bevy_sprite::texture_slice::border_rect::BorderRect",
+            "docs": " The sprite borders, defining the 9 sections of the image"
+          },
+          {
+            "name": "center_scale_mode",
+            "type_path": "bevy_sprite::texture_slice::slicer::SliceScaleMode",
+            "docs": " Defines how the center part of the 9 slices will scale"
+          },
+          {
+            "name": "sides_scale_mode",
+            "type_path": "bevy_sprite::texture_slice::slicer::SliceScaleMode",
+            "docs": " Defines how the 4 side parts of the 9 slices will scale"
+          },
+          {
+            "name": "max_corner_scale",
+            "type_path": "f32",
+            "docs": " Defines the maximum scale of the 4 corner slices (default to `1.0`)"
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_sprite::texture_slice::slicer::TextureSlicer",
+        "short_type_path": "TextureSlicer",
+        "ident": "TextureSlicer",
+        "crate_name": "bevy_sprite",
+        "module_path": "bevy_sprite::texture_slice::slicer"
+      },
+      "default": null,
+      "docs": " Slices a texture using the **9-slicing** technique. This allows to reuse an image at various sizes\n without needing to prepare multiple assets. The associated texture will be split into nine portions,\n so that on resize the different portions scale or tile in different ways to keep the texture in proportion.\n\n For example, when resizing a 9-sliced texture the corners will remain unscaled while the other\n sections will be scaled or tiled.\n\n See [9-sliced](https://en.wikipedia.org/wiki/9-slice_scaling) textures.",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_ui::ui_node::GridPlacement": {
+      "info": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "start",
+            "type_path": "core::option::Option<core::num::NonZeroI16>",
+            "docs": " The grid line at which the item should start.\n Lines are 1-indexed.\n Negative indexes count backwards from the end of the grid.\n Zero is not a valid index."
+          },
+          {
+            "name": "span",
+            "type_path": "core::option::Option<core::num::NonZeroU16>",
+            "docs": " How many grid tracks the item should span.\n Defaults to 1."
+          },
+          {
+            "name": "end",
+            "type_path": "core::option::Option<core::num::NonZeroI16>",
+            "docs": " The grid line at which the item should end.\n Lines are 1-indexed.\n Negative indexes count backwards from the end of the grid.\n Zero is not a valid index."
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_ui::ui_node::GridPlacement",
+        "short_type_path": "GridPlacement",
+        "ident": "GridPlacement",
+        "crate_name": "bevy_ui",
+        "module_path": "bevy_ui::ui_node"
+      },
+      "default": "{\"bevy_ui::ui_node::GridPlacement\":{\"start\":null,\"span\":1,\"end\":null}}",
+      "docs": " Represents the position of a grid item in a single axis.\n\n There are 3 fields which may be set:\n   - `start`: which grid line the item should start at\n   - `end`: which grid line the item should end at\n   - `span`: how many tracks the item should span\n\n The default `span` is 1. If neither `start` or `end` is set then the item will be placed automatically.\n\n Generally, at most two fields should be set. If all three fields are specified then `span` will be ignored. If `end` specifies an earlier\n grid line than `start` then `end` will be ignored and the item will have a span of 1.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Line-based_Placement_with_CSS_Grid>",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_color::linear_rgba::LinearRgba": {
+      "info": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "red",
+            "type_path": "f32",
+            "docs": " The red channel. [0.0, 1.0]"
+          },
+          {
+            "name": "green",
+            "type_path": "f32",
+            "docs": " The green channel. [0.0, 1.0]"
+          },
+          {
+            "name": "blue",
+            "type_path": "f32",
+            "docs": " The blue channel. [0.0, 1.0]"
+          },
+          {
+            "name": "alpha",
+            "type_path": "f32",
+            "docs": " The alpha channel. [0.0, 1.0]"
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_color::linear_rgba::LinearRgba",
+        "short_type_path": "LinearRgba",
+        "ident": "LinearRgba",
+        "crate_name": "bevy_color",
+        "module_path": "bevy_color::linear_rgba"
+      },
+      "default": "{\"bevy_color::linear_rgba::LinearRgba\":{\"red\":1.0,\"green\":1.0,\"blue\":1.0,\"alpha\":1.0}}",
+      "docs": " Linear RGB color with alpha.\n <div>\n </div>",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_color::hsla::Hsla": {
+      "info": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "hue",
+            "type_path": "f32",
+            "docs": " The hue channel. [0.0, 360.0]"
+          },
+          {
+            "name": "saturation",
+            "type_path": "f32",
+            "docs": " The saturation channel. [0.0, 1.0]"
+          },
+          {
+            "name": "lightness",
+            "type_path": "f32",
+            "docs": " The lightness channel. [0.0, 1.0]"
+          },
+          {
+            "name": "alpha",
+            "type_path": "f32",
+            "docs": " The alpha channel. [0.0, 1.0]"
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_color::hsla::Hsla",
+        "short_type_path": "Hsla",
+        "ident": "Hsla",
+        "crate_name": "bevy_color",
+        "module_path": "bevy_color::hsla"
+      },
+      "default": "{\"bevy_color::hsla::Hsla\":{\"hue\":0.0,\"saturation\":0.0,\"lightness\":1.0,\"alpha\":1.0}}",
+      "docs": " Color in Hue-Saturation-Lightness (HSL) color space with alpha.\n Further information on this color model can be found on [Wikipedia](https://en.wikipedia.org/wiki/HSL_and_HSV).\n <div>\n </div>",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_ui::ui_node::MinTrackSizingFunction": {
+      "info": {
+        "kind": "enum",
+        "variants": [
+          {
+            "kind": "tuple",
+            "name": "Px",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "f32",
+                "docs": null
+              }
+            ],
+            "docs": " Track minimum size should be a fixed pixel value"
+          },
+          {
+            "kind": "tuple",
+            "name": "Percent",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "f32",
+                "docs": null
+              }
+            ],
+            "docs": " Track minimum size should be a percentage value"
+          },
+          {
+            "kind": "unit",
+            "name": "MinContent",
+            "docs": " Track minimum size should be content sized under a min-content constraint"
+          },
+          {
+            "kind": "unit",
+            "name": "MaxContent",
+            "docs": " Track minimum size should be content sized under a max-content constraint"
+          },
+          {
+            "kind": "unit",
+            "name": "Auto",
+            "docs": " Track minimum size should be automatically sized"
+          },
+          {
+            "kind": "tuple",
+            "name": "VMin",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "f32",
+                "docs": null
+              }
+            ],
+            "docs": " Track minimum size should be a percent of the viewport's smaller dimension."
+          },
+          {
+            "kind": "tuple",
+            "name": "VMax",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "f32",
+                "docs": null
+              }
+            ],
+            "docs": " Track minimum size should be a percent of the viewport's larger dimension."
+          },
+          {
+            "kind": "tuple",
+            "name": "Vh",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "f32",
+                "docs": null
+              }
+            ],
+            "docs": " Track minimum size should be a percent of the viewport's height dimension."
+          },
+          {
+            "kind": "tuple",
+            "name": "Vw",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "f32",
+                "docs": null
+              }
+            ],
+            "docs": " Track minimum size should be a percent of the viewport's width dimension."
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_ui::ui_node::MinTrackSizingFunction",
+        "short_type_path": "MinTrackSizingFunction",
+        "ident": "MinTrackSizingFunction",
+        "crate_name": "bevy_ui",
+        "module_path": "bevy_ui::ui_node"
+      },
+      "default": "{\"bevy_ui::ui_node::MinTrackSizingFunction\":\"Auto\"}",
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_ui::ui_node::JustifyItems": {
+      "info": {
+        "kind": "enum",
+        "variants": [
+          {
+            "kind": "unit",
+            "name": "Default",
+            "docs": " The items are packed in their default position as if no alignment was applied."
+          },
+          {
+            "kind": "unit",
+            "name": "Start",
+            "docs": " The items are packed towards the start of the axis."
+          },
+          {
+            "kind": "unit",
+            "name": "End",
+            "docs": " The items are packed towards the end of the axis."
+          },
+          {
+            "kind": "unit",
+            "name": "Center",
+            "docs": " The items are packed along the center of the axis"
+          },
+          {
+            "kind": "unit",
+            "name": "Baseline",
+            "docs": " The items are packed such that their baselines align."
+          },
+          {
+            "kind": "unit",
+            "name": "Stretch",
+            "docs": " The items are stretched to fill the space they're given."
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_ui::ui_node::JustifyItems",
+        "short_type_path": "JustifyItems",
+        "ident": "JustifyItems",
+        "crate_name": "bevy_ui",
+        "module_path": "bevy_ui::ui_node"
+      },
+      "default": "{\"bevy_ui::ui_node::JustifyItems\":\"Default\"}",
+      "docs": " Used to control how each individual item is aligned by default within the space they're given.\n - For Flexbox containers, this property has no effect. See `justify_content` for main axis alignment of flex items.\n - For CSS Grid containers, sets default inline (horizontal) axis alignment of child items within their grid areas.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/justify-items>",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_ui::ui_node::GridTrackRepetition": {
+      "info": {
+        "kind": "enum",
+        "variants": [
+          {
+            "kind": "tuple",
+            "name": "Count",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "u16",
+                "docs": null
+              }
+            ],
+            "docs": " Repeat the track fixed number of times"
+          },
+          {
+            "kind": "unit",
+            "name": "AutoFill",
+            "docs": " Repeat the track to fill available space\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/repeat#auto-fill>"
+          },
+          {
+            "kind": "unit",
+            "name": "AutoFit",
+            "docs": " Repeat the track to fill available space but collapse any tracks that do not end up with\n an item placed in them.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/repeat#auto-fit>"
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_ui::ui_node::GridTrackRepetition",
+        "short_type_path": "GridTrackRepetition",
+        "ident": "GridTrackRepetition",
+        "crate_name": "bevy_ui",
+        "module_path": "bevy_ui::ui_node"
+      },
+      "default": "{\"bevy_ui::ui_node::GridTrackRepetition\":{\"Count\":1}}",
+      "docs": " How many times to repeat a repeated grid track\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/repeat>",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_transform::components::transform::Transform": {
+      "info": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "translation",
+            "type_path": "glam::Vec3",
+            "docs": " Position of the entity. In 2d, the last value of the `Vec3` is used for z-ordering.\n\n See the [`translations`] example for usage.\n\n [`translations`]: https://github.com/bevyengine/bevy/blob/latest/examples/transforms/translation.rs"
+          },
+          {
+            "name": "rotation",
+            "type_path": "glam::Quat",
+            "docs": " Rotation of the entity.\n\n See the [`3d_rotation`] example for usage.\n\n [`3d_rotation`]: https://github.com/bevyengine/bevy/blob/latest/examples/transforms/3d_rotation.rs"
+          },
+          {
+            "name": "scale",
+            "type_path": "glam::Vec3",
+            "docs": " Scale of the entity.\n\n See the [`scale`] example for usage.\n\n [`scale`]: https://github.com/bevyengine/bevy/blob/latest/examples/transforms/scale.rs"
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_transform::components::transform::Transform",
+        "short_type_path": "Transform",
+        "ident": "Transform",
+        "crate_name": "bevy_transform",
+        "module_path": "bevy_transform::components::transform"
+      },
+      "default": "{\"bevy_transform::components::transform::Transform\":{\"translation\":[0.0,0.0,0.0],\"rotation\":[0.0,0.0,0.0,1.0],\"scale\":[1.0,1.0,1.0]}}",
+      "docs": " Describe the position of an entity. If the entity has a parent, the position is relative\n to its parent position.\n\n * To place or move an entity, you should set its [`Transform`].\n * To get the global transform of an entity, you should get its [`GlobalTransform`].\n * To be displayed, an entity must have both a [`Transform`] and a [`GlobalTransform`].\n   * ~You may use the [`TransformBundle`](crate::bundles::TransformBundle) to guarantee this.~\n     [`TransformBundle`](crate::bundles::TransformBundle) is now deprecated.\n     [`GlobalTransform`] is automatically inserted whenever [`Transform`] is inserted.\n\n ## [`Transform`] and [`GlobalTransform`]\n\n [`Transform`] is the position of an entity relative to its parent position, or the reference\n frame if it doesn't have a [`Parent`](bevy_hierarchy::Parent).\n\n [`GlobalTransform`] is the position of an entity relative to the reference frame.\n\n [`GlobalTransform`] is updated from [`Transform`] by systems in the system set\n [`TransformPropagate`](crate::TransformSystem::TransformPropagate).\n\n This system runs during [`PostUpdate`](bevy_app::PostUpdate). If you\n update the [`Transform`] of an entity during this set or after, you will notice a 1 frame lag\n before the [`GlobalTransform`] is updated.\n\n # Examples\n\n - [`transform`][transform_example]\n\n [transform_example]: https://github.com/bevyengine/bevy/blob/latest/examples/transforms/transform.rs",
+      "traits": {
+        "component": true,
+        "resource": false
+      }
+    },
+    "core::num::NonZeroI16": {
+      "info": {
+        "kind": "opaque",
+        "item_type_path": "core::num::NonZeroI16"
+      },
+      "path_table": {
+        "path": "core::num::NonZeroI16",
+        "short_type_path": "NonZeroI16",
+        "ident": "NonZeroI16",
+        "crate_name": "core",
+        "module_path": "core::num"
+      },
+      "default": null,
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "glam::Vec3": {
+      "info": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "x",
+            "type_path": "f32",
+            "docs": null
+          },
+          {
+            "name": "y",
+            "type_path": "f32",
+            "docs": null
+          },
+          {
+            "name": "z",
+            "type_path": "f32",
+            "docs": null
+          }
+        ]
+      },
+      "path_table": {
+        "path": "glam::Vec3",
+        "short_type_path": "Vec3",
+        "ident": "Vec3",
+        "crate_name": "glam",
+        "module_path": "glam"
+      },
+      "default": "{\"glam::Vec3\":[0.0,0.0,0.0]}",
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "f64": {
+      "info": {
+        "kind": "opaque",
+        "item_type_path": "f64"
+      },
+      "path_table": {
+        "path": "f64",
+        "short_type_path": "f64",
+        "ident": "f64",
+        "crate_name": null,
+        "module_path": null
+      },
+      "default": "{\"f64\":0.0}",
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_math::primitives::dim3::Plane3d": {
+      "info": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "normal",
+            "type_path": "bevy_math::direction::Dir3",
+            "docs": " The normal of the plane. The plane will be placed perpendicular to this direction"
+          },
+          {
+            "name": "half_size",
+            "type_path": "glam::Vec2",
+            "docs": " Half of the width and height of the plane"
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_math::primitives::dim3::Plane3d",
+        "short_type_path": "Plane3d",
+        "ident": "Plane3d",
+        "crate_name": "bevy_math",
+        "module_path": "bevy_math::primitives::dim3"
+      },
+      "default": "{\"bevy_math::primitives::dim3::Plane3d\":{\"normal\":[0.0,1.0,0.0],\"half_size\":[0.5,0.5]}}",
+      "docs": " A bounded plane in 3D space. It forms a surface starting from the origin with a defined height and width.",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_sprite::texture_slice::slicer::SliceScaleMode": {
+      "info": {
+        "kind": "enum",
+        "variants": [
+          {
+            "kind": "unit",
+            "name": "Stretch",
+            "docs": " The slice will be stretched to fit the area"
+          },
+          {
+            "kind": "struct",
+            "name": "Tile",
+            "fields": [
+              {
+                "name": "stretch_value",
+                "type_path": "f32",
+                "docs": " The slice will repeat when the ratio between the *drawing dimensions* of texture and the\n *original texture size* are above `stretch_value`.\n\n Example: `1.0` means that a 10 pixel wide image would repeat after 10 screen pixels.\n `2.0` means it would repeat after 20 screen pixels.\n\n Note: The value should be inferior or equal to `1.0` to avoid quality loss.\n\n Note: the value will be clamped to `0.001` if lower"
+              }
+            ],
+            "docs": " The slice will be tiled to fit the area"
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_sprite::texture_slice::slicer::SliceScaleMode",
+        "short_type_path": "SliceScaleMode",
+        "ident": "SliceScaleMode",
+        "crate_name": "bevy_sprite",
+        "module_path": "bevy_sprite::texture_slice::slicer"
+      },
+      "default": null,
+      "docs": " Defines how a texture slice scales when resized",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "core::option::Option<core::num::NonZeroI16>": {
+      "info": {
+        "kind": "enum",
+        "variants": [
+          {
+            "kind": "unit",
+            "name": "None",
+            "docs": null
+          },
+          {
+            "kind": "tuple",
+            "name": "Some",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "core::num::NonZeroI16",
+                "docs": null
+              }
+            ],
+            "docs": null
+          }
+        ]
+      },
+      "path_table": {
+        "path": "core::option::Option<core::num::NonZeroI16>",
+        "short_type_path": "Option<NonZeroI16>",
+        "ident": "Option",
+        "crate_name": "core",
+        "module_path": "core::option"
+      },
+      "default": null,
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "i128": {
+      "info": {
+        "kind": "opaque",
+        "item_type_path": "i128"
+      },
+      "path_table": {
+        "path": "i128",
+        "short_type_path": "i128",
+        "ident": "i128",
+        "crate_name": null,
+        "module_path": null
+      },
+      "default": "{\"i128\":0}",
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "char": {
+      "info": {
+        "kind": "opaque",
+        "item_type_path": "char"
+      },
+      "path_table": {
+        "path": "char",
+        "short_type_path": "char",
+        "ident": "char",
+        "crate_name": null,
+        "module_path": null
+      },
+      "default": "{\"char\":\"\\u0000\"}",
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "f32": {
+      "info": {
+        "kind": "opaque",
+        "item_type_path": "f32"
+      },
+      "path_table": {
+        "path": "f32",
+        "short_type_path": "f32",
+        "ident": "f32",
+        "crate_name": null,
+        "module_path": null
+      },
+      "default": "{\"f32\":0.0}",
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_ui::geometry::UiRect": {
+      "info": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "left",
+            "type_path": "bevy_ui::geometry::Val",
+            "docs": " The value corresponding to the left side of the UI rect."
+          },
+          {
+            "name": "right",
+            "type_path": "bevy_ui::geometry::Val",
+            "docs": " The value corresponding to the right side of the UI rect."
+          },
+          {
+            "name": "top",
+            "type_path": "bevy_ui::geometry::Val",
+            "docs": " The value corresponding to the top side of the UI rect."
+          },
+          {
+            "name": "bottom",
+            "type_path": "bevy_ui::geometry::Val",
+            "docs": " The value corresponding to the bottom side of the UI rect."
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_ui::geometry::UiRect",
+        "short_type_path": "UiRect",
+        "ident": "UiRect",
+        "crate_name": "bevy_ui",
+        "module_path": "bevy_ui::geometry"
+      },
+      "default": "{\"bevy_ui::geometry::UiRect\":{\"left\":{\"Px\":0.0},\"right\":{\"Px\":0.0},\"top\":{\"Px\":0.0},\"bottom\":{\"Px\":0.0}}}",
+      "docs": " A type which is commonly used to define margins, paddings and borders.\n\n # Examples\n\n ## Margin\n\n A margin is used to create space around UI elements, outside of any defined borders.\n\n ```\n # use bevy_ui::{UiRect, Val};\n #\n let margin = UiRect::all(Val::Auto); // Centers the UI element\n ```\n\n ## Padding\n\n A padding is used to create space around UI elements, inside of any defined borders.\n\n ```\n # use bevy_ui::{UiRect, Val};\n #\n let padding = UiRect {\n     left: Val::Px(10.0),\n     right: Val::Px(20.0),\n     top: Val::Px(30.0),\n     bottom: Val::Px(40.0),\n };\n ```\n\n ## Borders\n\n A border is used to define the width of the border of a UI element.\n\n ```\n # use bevy_ui::{UiRect, Val};\n #\n let border = UiRect {\n     left: Val::Px(10.0),\n     right: Val::Px(20.0),\n     top: Val::Px(30.0),\n     bottom: Val::Px(40.0),\n };\n ```",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_color::srgba::Srgba": {
+      "info": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "red",
+            "type_path": "f32",
+            "docs": " The red channel. [0.0, 1.0]"
+          },
+          {
+            "name": "green",
+            "type_path": "f32",
+            "docs": " The green channel. [0.0, 1.0]"
+          },
+          {
+            "name": "blue",
+            "type_path": "f32",
+            "docs": " The blue channel. [0.0, 1.0]"
+          },
+          {
+            "name": "alpha",
+            "type_path": "f32",
+            "docs": " The alpha channel. [0.0, 1.0]"
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_color::srgba::Srgba",
+        "short_type_path": "Srgba",
+        "ident": "Srgba",
+        "crate_name": "bevy_color",
+        "module_path": "bevy_color::srgba"
+      },
+      "default": "{\"bevy_color::srgba::Srgba\":{\"red\":1.0,\"green\":1.0,\"blue\":1.0,\"alpha\":1.0}}",
+      "docs": " Non-linear standard RGB with alpha.\n <div>\n </div>",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "glam::Quat": {
+      "info": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "x",
+            "type_path": "f32",
+            "docs": null
+          },
+          {
+            "name": "y",
+            "type_path": "f32",
+            "docs": null
+          },
+          {
+            "name": "z",
+            "type_path": "f32",
+            "docs": null
+          },
+          {
+            "name": "w",
+            "type_path": "f32",
+            "docs": null
+          }
+        ]
+      },
+      "path_table": {
+        "path": "glam::Quat",
+        "short_type_path": "Quat",
+        "ident": "Quat",
+        "crate_name": "glam",
+        "module_path": "glam"
+      },
+      "default": "{\"glam::Quat\":[0.0,0.0,0.0,1.0]}",
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevyhub_scene::utils::bundle_placeholder::BundlePlaceholder": {
+      "info": {
+        "kind": "enum",
+        "variants": [
+          {
+            "kind": "unit",
+            "name": "Camera2d",
+            "docs": null
+          },
+          {
+            "kind": "unit",
+            "name": "Camera3d",
+            "docs": null
+          },
+          {
+            "kind": "unit",
+            "name": "PointLight",
+            "docs": null
+          },
+          {
+            "kind": "struct",
+            "name": "Text",
+            "fields": [
+              {
+                "name": "sections",
+                "type_path": "alloc::vec::Vec<alloc::string::String>",
+                "docs": null
+              },
+              {
+                "name": "node",
+                "type_path": "bevy_ui::ui_node::Node",
+                "docs": null
+              },
+              {
+                "name": "visibility",
+                "type_path": "bevy_render::view::visibility::Visibility",
+                "docs": null
+              },
+              {
+                "name": "layout",
+                "type_path": "bevy_text::text::TextLayout",
+                "docs": null
+              },
+              {
+                "name": "background_color",
+                "type_path": "core::option::Option<bevy_color::color::Color>",
+                "docs": null
+              }
+            ],
+            "docs": null
+          },
+          {
+            "kind": "struct",
+            "name": "Sprite",
+            "fields": [
+              {
+                "name": "path",
+                "type_path": "alloc::string::String",
+                "docs": null
+              },
+              {
+                "name": "image_mode",
+                "type_path": "bevy_sprite::sprite::SpriteImageMode",
+                "docs": null
+              }
+            ],
+            "docs": null
+          },
+          {
+            "kind": "tuple",
+            "name": "Scene",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "alloc::string::String",
+                "docs": null
+              }
+            ],
+            "docs": null
+          },
+          {
+            "kind": "tuple",
+            "name": "Gltf",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "alloc::string::String",
+                "docs": null
+              }
+            ],
+            "docs": null
+          },
+          {
+            "kind": "struct",
+            "name": "Pbr",
+            "fields": [
+              {
+                "name": "mesh",
+                "type_path": "bevyhub_scene::utils::bundle_placeholder::MeshPlaceholder",
+                "docs": null
+              },
+              {
+                "name": "material",
+                "type_path": "bevyhub_scene::utils::bundle_placeholder::MaterialPlaceholder",
+                "docs": null
+              }
+            ],
+            "docs": null
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevyhub_scene::utils::bundle_placeholder::BundlePlaceholder",
+        "short_type_path": "BundlePlaceholder",
+        "ident": "BundlePlaceholder",
+        "crate_name": "bevyhub_scene",
+        "module_path": "bevyhub_scene::utils::bundle_placeholder"
+      },
+      "default": null,
+      "docs": null,
+      "traits": {
+        "component": true,
+        "resource": false
+      }
+    },
+    "bevy_ui::ui_node::GridAutoFlow": {
+      "info": {
+        "kind": "enum",
+        "variants": [
+          {
+            "kind": "unit",
+            "name": "Row",
+            "docs": " Items are placed by filling each row in turn, adding new rows as necessary."
+          },
+          {
+            "kind": "unit",
+            "name": "Column",
+            "docs": " Items are placed by filling each column in turn, adding new columns as necessary."
+          },
+          {
+            "kind": "unit",
+            "name": "RowDense",
+            "docs": " Combines `Row` with the dense packing algorithm."
+          },
+          {
+            "kind": "unit",
+            "name": "ColumnDense",
+            "docs": " Combines `Column` with the dense packing algorithm."
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_ui::ui_node::GridAutoFlow",
+        "short_type_path": "GridAutoFlow",
+        "ident": "GridAutoFlow",
+        "crate_name": "bevy_ui",
+        "module_path": "bevy_ui::ui_node"
+      },
+      "default": "{\"bevy_ui::ui_node::GridAutoFlow\":\"Row\"}",
+      "docs": " Controls whether grid items are placed row-wise or column-wise as well as whether the sparse or dense packing algorithm is used.\n\n The \"dense\" packing algorithm attempts to fill in holes earlier in the grid, if smaller items come up later.\n This may cause items to appear out-of-order when doing so would fill in holes left by larger items.\n\n Defaults to [`GridAutoFlow::Row`].\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow>",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevyhub_scene::utils::bundle_placeholder::MeshPlaceholder": {
+      "info": {
+        "kind": "enum",
+        "variants": [
+          {
+            "kind": "tuple",
+            "name": "Circle",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "bevy_math::primitives::dim2::Circle",
+                "docs": null
+              }
+            ],
+            "docs": null
+          },
+          {
+            "kind": "tuple",
+            "name": "Cuboid",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "bevy_math::primitives::dim3::Cuboid",
+                "docs": null
+              }
+            ],
+            "docs": null
+          },
+          {
+            "kind": "tuple",
+            "name": "Sphere",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "bevy_math::primitives::dim3::Sphere",
+                "docs": null
+              }
+            ],
+            "docs": null
+          },
+          {
+            "kind": "tuple",
+            "name": "Cylinder",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "bevy_math::primitives::dim3::Cylinder",
+                "docs": null
+              }
+            ],
+            "docs": null
+          },
+          {
+            "kind": "tuple",
+            "name": "Plane3d",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "bevy_math::primitives::dim3::Plane3d",
+                "docs": null
+              }
+            ],
+            "docs": null
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevyhub_scene::utils::bundle_placeholder::MeshPlaceholder",
+        "short_type_path": "MeshPlaceholder",
+        "ident": "MeshPlaceholder",
+        "crate_name": "bevyhub_scene",
+        "module_path": "bevyhub_scene::utils::bundle_placeholder"
+      },
+      "default": null,
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_color::hsva::Hsva": {
+      "info": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "hue",
+            "type_path": "f32",
+            "docs": " The hue channel. [0.0, 360.0]"
+          },
+          {
+            "name": "saturation",
+            "type_path": "f32",
+            "docs": " The saturation channel. [0.0, 1.0]"
+          },
+          {
+            "name": "value",
+            "type_path": "f32",
+            "docs": " The value channel. [0.0, 1.0]"
+          },
+          {
+            "name": "alpha",
+            "type_path": "f32",
+            "docs": " The alpha channel. [0.0, 1.0]"
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_color::hsva::Hsva",
+        "short_type_path": "Hsva",
+        "ident": "Hsva",
+        "crate_name": "bevy_color",
+        "module_path": "bevy_color::hsva"
+      },
+      "default": "{\"bevy_color::hsva::Hsva\":{\"hue\":0.0,\"saturation\":0.0,\"value\":1.0,\"alpha\":1.0}}",
+      "docs": " Color in Hue-Saturation-Value (HSV) color space with alpha.\n Further information on this color model can be found on [Wikipedia](https://en.wikipedia.org/wiki/HSL_and_HSV).\n <div>\n </div>",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_color::xyza::Xyza": {
+      "info": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "x",
+            "type_path": "f32",
+            "docs": " The x-axis. [0.0, 1.0]"
+          },
+          {
+            "name": "y",
+            "type_path": "f32",
+            "docs": " The y-axis, intended to represent luminance. [0.0, 1.0]"
+          },
+          {
+            "name": "z",
+            "type_path": "f32",
+            "docs": " The z-axis. [0.0, 1.0]"
+          },
+          {
+            "name": "alpha",
+            "type_path": "f32",
+            "docs": " The alpha channel. [0.0, 1.0]"
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_color::xyza::Xyza",
+        "short_type_path": "Xyza",
+        "ident": "Xyza",
+        "crate_name": "bevy_color",
+        "module_path": "bevy_color::xyza"
+      },
+      "default": "{\"bevy_color::xyza::Xyza\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"alpha\":1.0}}",
+      "docs": " [CIE 1931](https://en.wikipedia.org/wiki/CIE_1931_color_space) color space, also known as XYZ, with an alpha channel.\n <div>\n </div>",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_ui::ui_node::OverflowClipBox": {
+      "info": {
+        "kind": "enum",
+        "variants": [
+          {
+            "kind": "unit",
+            "name": "ContentBox",
+            "docs": " Clip any content that overflows outside the content box"
+          },
+          {
+            "kind": "unit",
+            "name": "PaddingBox",
+            "docs": " Clip any content that overflows outside the padding box"
+          },
+          {
+            "kind": "unit",
+            "name": "BorderBox",
+            "docs": " Clip any content that overflows outside the border box"
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_ui::ui_node::OverflowClipBox",
+        "short_type_path": "OverflowClipBox",
+        "ident": "OverflowClipBox",
+        "crate_name": "bevy_ui",
+        "module_path": "bevy_ui::ui_node"
+      },
+      "default": "{\"bevy_ui::ui_node::OverflowClipBox\":\"ContentBox\"}",
+      "docs": " Used to determine the bounds of the visible area when a UI node is clipped.",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "glam::Vec3A": {
+      "info": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "x",
+            "type_path": "f32",
+            "docs": null
+          },
+          {
+            "name": "y",
+            "type_path": "f32",
+            "docs": null
+          },
+          {
+            "name": "z",
+            "type_path": "f32",
+            "docs": null
+          }
+        ]
+      },
+      "path_table": {
+        "path": "glam::Vec3A",
+        "short_type_path": "Vec3A",
+        "ident": "Vec3A",
+        "crate_name": "glam",
+        "module_path": "glam"
+      },
+      "default": "{\"glam::Vec3A\":[0.0,0.0,0.0]}",
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_ui::ui_node::RepeatedGridTrack": {
+      "info": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "repetition",
+            "type_path": "bevy_ui::ui_node::GridTrackRepetition",
+            "docs": null
+          },
+          {
+            "name": "tracks",
+            "type_path": "smallvec::SmallVec<[bevy_ui::ui_node::GridTrack; 1]>",
+            "docs": null
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_ui::ui_node::RepeatedGridTrack",
+        "short_type_path": "RepeatedGridTrack",
+        "ident": "RepeatedGridTrack",
+        "crate_name": "bevy_ui",
+        "module_path": "bevy_ui::ui_node"
+      },
+      "default": "{\"bevy_ui::ui_node::RepeatedGridTrack\":{\"repetition\":{\"Count\":1},\"tracks\":[{\"min_sizing_function\":\"Auto\",\"max_sizing_function\":\"Auto\"}]}}",
+      "docs": " Represents a *possibly* repeated [`GridTrack`].\n\n The repetition parameter can either be:\n   - The integer `1`, in which case the track is non-repeated.\n   - a `u16` count to repeat the track N times.\n   - A `GridTrackRepetition::AutoFit` or `GridTrackRepetition::AutoFill`.\n\n Note: that in the common case you want a non-repeating track (repetition count 1), you may use the constructor methods on [`GridTrack`]\n to create a `RepeatedGridTrack`. i.e. `GridTrack::px(10.0)` is equivalent to `RepeatedGridTrack::px(1, 10.0)`.\n\n You may only use one auto-repetition per track list. And if your track list contains an auto repetition\n then all tracks (in and outside of the repetition) must be fixed size (px or percent). Integer repetitions are just shorthand for writing out\n N tracks longhand and are not subject to the same limitations.",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_color::color::Color": {
+      "info": {
+        "kind": "enum",
+        "variants": [
+          {
+            "kind": "tuple",
+            "name": "Srgba",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "bevy_color::srgba::Srgba",
+                "docs": null
+              }
+            ],
+            "docs": " A color in the sRGB color space with alpha."
+          },
+          {
+            "kind": "tuple",
+            "name": "LinearRgba",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "bevy_color::linear_rgba::LinearRgba",
+                "docs": null
+              }
+            ],
+            "docs": " A color in the linear sRGB color space with alpha."
+          },
+          {
+            "kind": "tuple",
+            "name": "Hsla",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "bevy_color::hsla::Hsla",
+                "docs": null
+              }
+            ],
+            "docs": " A color in the HSL color space with alpha."
+          },
+          {
+            "kind": "tuple",
+            "name": "Hsva",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "bevy_color::hsva::Hsva",
+                "docs": null
+              }
+            ],
+            "docs": " A color in the HSV color space with alpha."
+          },
+          {
+            "kind": "tuple",
+            "name": "Hwba",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "bevy_color::hwba::Hwba",
+                "docs": null
+              }
+            ],
+            "docs": " A color in the HWB color space with alpha."
+          },
+          {
+            "kind": "tuple",
+            "name": "Laba",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "bevy_color::laba::Laba",
+                "docs": null
+              }
+            ],
+            "docs": " A color in the LAB color space with alpha."
+          },
+          {
+            "kind": "tuple",
+            "name": "Lcha",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "bevy_color::lcha::Lcha",
+                "docs": null
+              }
+            ],
+            "docs": " A color in the LCH color space with alpha."
+          },
+          {
+            "kind": "tuple",
+            "name": "Oklaba",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "bevy_color::oklaba::Oklaba",
+                "docs": null
+              }
+            ],
+            "docs": " A color in the Oklab color space with alpha."
+          },
+          {
+            "kind": "tuple",
+            "name": "Oklcha",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "bevy_color::oklcha::Oklcha",
+                "docs": null
+              }
+            ],
+            "docs": " A color in the Oklch color space with alpha."
+          },
+          {
+            "kind": "tuple",
+            "name": "Xyza",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "bevy_color::xyza::Xyza",
+                "docs": null
+              }
+            ],
+            "docs": " A color in the XYZ color space with alpha."
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_color::color::Color",
+        "short_type_path": "Color",
+        "ident": "Color",
+        "crate_name": "bevy_color",
+        "module_path": "bevy_color::color"
+      },
+      "default": "{\"bevy_color::color::Color\":{\"LinearRgba\":{\"red\":1.0,\"green\":1.0,\"blue\":1.0,\"alpha\":1.0}}}",
+      "docs": " An enumerated type that can represent any of the color types in this crate.\n\n This is useful when you need to store a color in a data structure that can't be generic over\n the color type.\n <div>\n </div>\n\n # Operations\n\n [`Color`] supports all the standard color operations, such as [mixing](Mix),\n [luminance](Luminance) and [hue](Hue) adjustment,\n and [diffing](EuclideanDistance). These operations delegate to the concrete color space contained\n by [`Color`], but will convert to [`Oklch`](Oklcha) for operations which aren't supported in the\n current space. After performing the operation, if a conversion was required, the result will be\n converted back into the original color space.\n\n ```rust\n # use bevy_color::{Hue, Color};\n let red_hsv = Color::hsv(0., 1., 1.);\n let red_srgb = Color::srgb(1., 0., 0.);\n\n // HSV has a definition of hue, so it will be returned.\n red_hsv.hue();\n\n // SRGB doesn't have a native definition for hue.\n // Converts to Oklch and returns that result.\n red_srgb.hue();\n ```\n\n [`Oklch`](Oklcha) has been chosen as the intermediary space in cases where conversion is required\n due to its perceptual uniformity and broad support for Bevy's color operations.\n To avoid the cost of repeated conversion, and ensure consistent results where that is desired,\n first convert this [`Color`] into your desired color space.",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "i32": {
+      "info": {
+        "kind": "opaque",
+        "item_type_path": "i32"
+      },
+      "path_table": {
+        "path": "i32",
+        "short_type_path": "i32",
+        "ident": "i32",
+        "crate_name": null,
+        "module_path": null
+      },
+      "default": "{\"i32\":0}",
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_text::text::JustifyText": {
+      "info": {
+        "kind": "enum",
+        "variants": [
+          {
+            "kind": "unit",
+            "name": "Left",
+            "docs": " Leftmost character is immediately to the right of the render position.\n Bounds start from the render position and advance rightwards."
+          },
+          {
+            "kind": "unit",
+            "name": "Center",
+            "docs": " Leftmost & rightmost characters are equidistant to the render position.\n Bounds start from the render position and advance equally left & right."
+          },
+          {
+            "kind": "unit",
+            "name": "Right",
+            "docs": " Rightmost character is immediately to the left of the render position.\n Bounds start from the render position and advance leftwards."
+          },
+          {
+            "kind": "unit",
+            "name": "Justified",
+            "docs": " Words are spaced so that leftmost & rightmost characters\n align with their margins.\n Bounds start from the render position and advance equally left & right."
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_text::text::JustifyText",
+        "short_type_path": "JustifyText",
+        "ident": "JustifyText",
+        "crate_name": "bevy_text",
+        "module_path": "bevy_text::text"
+      },
+      "default": null,
+      "docs": " Describes the horizontal alignment of multiple lines of text relative to each other.\n\n This only affects the internal positioning of the lines of text within a text entity and\n does not affect the text entity's position.\n\n _Has no affect on a single line text entity._",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_ui::ui_node::OverflowClipMargin": {
+      "info": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "visual_box",
+            "type_path": "bevy_ui::ui_node::OverflowClipBox",
+            "docs": " Visible unclipped area"
+          },
+          {
+            "name": "margin",
+            "type_path": "f32",
+            "docs": " Width of the margin on each edge of the visual box in logical pixels.\n The width of the margin will be zero if a negative value is set."
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_ui::ui_node::OverflowClipMargin",
+        "short_type_path": "OverflowClipMargin",
+        "ident": "OverflowClipMargin",
+        "crate_name": "bevy_ui",
+        "module_path": "bevy_ui::ui_node"
+      },
+      "default": "{\"bevy_ui::ui_node::OverflowClipMargin\":{\"visual_box\":\"ContentBox\",\"margin\":0.0}}",
+      "docs": " The bounds of the visible area when a UI node is clipped.",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "core::option::Option<core::num::NonZeroU16>": {
+      "info": {
+        "kind": "enum",
+        "variants": [
+          {
+            "kind": "unit",
+            "name": "None",
+            "docs": null
+          },
+          {
+            "kind": "tuple",
+            "name": "Some",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "core::num::NonZeroU16",
+                "docs": null
+              }
+            ],
+            "docs": null
+          }
+        ]
+      },
+      "path_table": {
+        "path": "core::option::Option<core::num::NonZeroU16>",
+        "short_type_path": "Option<NonZeroU16>",
+        "ident": "Option",
+        "crate_name": "core",
+        "module_path": "core::option"
+      },
+      "default": null,
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_math::primitives::dim3::Sphere": {
+      "info": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "radius",
+            "type_path": "f32",
+            "docs": " The radius of the sphere"
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_math::primitives::dim3::Sphere",
+        "short_type_path": "Sphere",
+        "ident": "Sphere",
+        "crate_name": "bevy_math",
+        "module_path": "bevy_math::primitives::dim3"
+      },
+      "default": "{\"bevy_math::primitives::dim3::Sphere\":{\"radius\":0.5}}",
+      "docs": " A sphere primitive, representing the set of all points some distance from the origin",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "i64": {
+      "info": {
+        "kind": "opaque",
+        "item_type_path": "i64"
+      },
+      "path_table": {
+        "path": "i64",
+        "short_type_path": "i64",
+        "ident": "i64",
+        "crate_name": null,
+        "module_path": null
+      },
+      "default": "{\"i64\":0}",
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_ui::ui_node::AlignContent": {
+      "info": {
+        "kind": "enum",
+        "variants": [
+          {
+            "kind": "unit",
+            "name": "Default",
+            "docs": " The items are packed in their default position as if no alignment was applied."
+          },
+          {
+            "kind": "unit",
+            "name": "Start",
+            "docs": " The items are packed towards the start of the axis."
+          },
+          {
+            "kind": "unit",
+            "name": "End",
+            "docs": " The items are packed towards the end of the axis."
+          },
+          {
+            "kind": "unit",
+            "name": "FlexStart",
+            "docs": " The items are packed towards the start of the axis, unless the flex direction is reversed;\n then the items are packed towards the end of the axis."
+          },
+          {
+            "kind": "unit",
+            "name": "FlexEnd",
+            "docs": " The items are packed towards the end of the axis, unless the flex direction is reversed;\n then the items are packed towards the start of the axis."
+          },
+          {
+            "kind": "unit",
+            "name": "Center",
+            "docs": " The items are packed along the center of the axis."
+          },
+          {
+            "kind": "unit",
+            "name": "Stretch",
+            "docs": " The items are stretched to fill the container along the axis."
+          },
+          {
+            "kind": "unit",
+            "name": "SpaceBetween",
+            "docs": " The items are distributed such that the gap between any two items is equal."
+          },
+          {
+            "kind": "unit",
+            "name": "SpaceEvenly",
+            "docs": " The items are distributed such that the gap between and around any two items is equal."
+          },
+          {
+            "kind": "unit",
+            "name": "SpaceAround",
+            "docs": " The items are distributed such that the gap between and around any two items is equal, with half-size gaps on either end."
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_ui::ui_node::AlignContent",
+        "short_type_path": "AlignContent",
+        "ident": "AlignContent",
+        "crate_name": "bevy_ui",
+        "module_path": "bevy_ui::ui_node"
+      },
+      "default": "{\"bevy_ui::ui_node::AlignContent\":\"Default\"}",
+      "docs": " Used to control how items are distributed.\n - For Flexbox containers, controls alignment of lines if `flex_wrap` is set to [`FlexWrap::Wrap`] and there are multiple lines of items.\n - For CSS Grid containers, controls alignment of grid rows.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/align-content>",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "i16": {
+      "info": {
+        "kind": "opaque",
+        "item_type_path": "i16"
+      },
+      "path_table": {
+        "path": "i16",
+        "short_type_path": "i16",
+        "ident": "i16",
+        "crate_name": null,
+        "module_path": null
+      },
+      "default": "{\"i16\":0}",
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_ui::ui_node::JustifySelf": {
+      "info": {
+        "kind": "enum",
+        "variants": [
+          {
+            "kind": "unit",
+            "name": "Auto",
+            "docs": " Use the parent node's [`JustifyItems`] value to determine how this item should be aligned."
+          },
+          {
+            "kind": "unit",
+            "name": "Start",
+            "docs": " This item will be aligned with the start of the axis."
+          },
+          {
+            "kind": "unit",
+            "name": "End",
+            "docs": " This item will be aligned with the end of the axis."
+          },
+          {
+            "kind": "unit",
+            "name": "Center",
+            "docs": " This item will be aligned along the center of the axis."
+          },
+          {
+            "kind": "unit",
+            "name": "Baseline",
+            "docs": " This item will be aligned at the baseline."
+          },
+          {
+            "kind": "unit",
+            "name": "Stretch",
+            "docs": " This item will be stretched to fill the space it's given."
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_ui::ui_node::JustifySelf",
+        "short_type_path": "JustifySelf",
+        "ident": "JustifySelf",
+        "crate_name": "bevy_ui",
+        "module_path": "bevy_ui::ui_node"
+      },
+      "default": "{\"bevy_ui::ui_node::JustifySelf\":\"Auto\"}",
+      "docs": " Used to control how the specified item is aligned within the space it's given.\n - For Flexbox items, this property has no effect. See `justify_content` for main axis alignment of flex items.\n - For CSS Grid items, controls inline (horizontal) axis alignment of a grid item within its grid area.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/justify-self>",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_math::direction::Dir3": {
+      "info": {
+        "kind": "tupleStruct",
+        "fields": [
+          {
+            "index": 0,
+            "type_path": "glam::Vec3",
+            "docs": null
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_math::direction::Dir3",
+        "short_type_path": "Dir3",
+        "ident": "Dir3",
+        "crate_name": "bevy_math",
+        "module_path": "bevy_math::direction"
+      },
+      "default": null,
+      "docs": " A normalized vector pointing in a direction in 3D space",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "alloc::borrow::Cow<str>": {
+      "info": {
+        "kind": "opaque",
+        "item_type_path": "alloc::borrow::Cow<str>"
+      },
+      "path_table": {
+        "path": "alloc::borrow::Cow<str>",
+        "short_type_path": "Cow<str>",
+        "ident": "Cow",
+        "crate_name": "alloc",
+        "module_path": "alloc::borrow"
+      },
+      "default": null,
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevyhub_scene::utils::bundle_placeholder::MaterialPlaceholder": {
+      "info": {
+        "kind": "enum",
+        "variants": [
+          {
+            "kind": "tuple",
+            "name": "Color",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "bevy_color::color::Color",
+                "docs": null
+              }
+            ],
+            "docs": null
+          },
+          {
+            "kind": "struct",
+            "name": "StandardMaterial",
+            "fields": [
+              {
+                "name": "base_color",
+                "type_path": "bevy_color::color::Color",
+                "docs": null
+              },
+              {
+                "name": "unlit",
+                "type_path": "bool",
+                "docs": null
+              }
+            ],
+            "docs": null
+          },
+          {
+            "kind": "struct",
+            "name": "Texture",
+            "fields": [
+              {
+                "name": "path",
+                "type_path": "alloc::string::String",
+                "docs": null
+              },
+              {
+                "name": "unlit",
+                "type_path": "bool",
+                "docs": null
+              },
+              {
+                "name": "alpha_mode",
+                "type_path": "bevy_render::alpha::AlphaMode",
+                "docs": null
+              }
+            ],
+            "docs": null
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevyhub_scene::utils::bundle_placeholder::MaterialPlaceholder",
+        "short_type_path": "MaterialPlaceholder",
+        "ident": "MaterialPlaceholder",
+        "crate_name": "bevyhub_scene",
+        "module_path": "bevyhub_scene::utils::bundle_placeholder"
+      },
+      "default": null,
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_color::oklcha::Oklcha": {
+      "info": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "lightness",
+            "type_path": "f32",
+            "docs": " The 'lightness' channel. [0.0, 1.0]"
+          },
+          {
+            "name": "chroma",
+            "type_path": "f32",
+            "docs": " The 'chroma' channel. [0.0, 1.0]"
+          },
+          {
+            "name": "hue",
+            "type_path": "f32",
+            "docs": " The 'hue' channel. [0.0, 360.0]"
+          },
+          {
+            "name": "alpha",
+            "type_path": "f32",
+            "docs": " The alpha channel. [0.0, 1.0]"
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_color::oklcha::Oklcha",
+        "short_type_path": "Oklcha",
+        "ident": "Oklcha",
+        "crate_name": "bevy_color",
+        "module_path": "bevy_color::oklcha"
+      },
+      "default": "{\"bevy_color::oklcha::Oklcha\":{\"lightness\":1.0,\"chroma\":0.0,\"hue\":0.0,\"alpha\":1.0}}",
+      "docs": " Color in Oklch color space, with alpha\n <div>\n </div>",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "smallvec::SmallVec<[bevy_ui::ui_node::GridTrack; 1]>": {
+      "info": {
+        "kind": "list",
+        "item_type_path": "bevy_ui::ui_node::GridTrack"
+      },
+      "path_table": {
+        "path": "smallvec::SmallVec<[bevy_ui::ui_node::GridTrack; 1]>",
+        "short_type_path": "SmallVec<[GridTrack; 1]>",
+        "ident": "SmallVec",
+        "crate_name": "smallvec",
+        "module_path": "smallvec"
+      },
+      "default": null,
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "u64": {
+      "info": {
+        "kind": "opaque",
+        "item_type_path": "u64"
+      },
+      "path_table": {
+        "path": "u64",
+        "short_type_path": "u64",
+        "ident": "u64",
+        "crate_name": null,
+        "module_path": null
+      },
+      "default": "{\"u64\":0}",
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "glam::Mat3A": {
+      "info": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "x_axis",
+            "type_path": "glam::Vec3A",
+            "docs": null
+          },
+          {
+            "name": "y_axis",
+            "type_path": "glam::Vec3A",
+            "docs": null
+          },
+          {
+            "name": "z_axis",
+            "type_path": "glam::Vec3A",
+            "docs": null
+          }
+        ]
+      },
+      "path_table": {
+        "path": "glam::Mat3A",
+        "short_type_path": "Mat3A",
+        "ident": "Mat3A",
+        "crate_name": "glam",
+        "module_path": "glam"
+      },
+      "default": "{\"glam::Mat3A\":[1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0]}",
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "u16": {
+      "info": {
+        "kind": "opaque",
+        "item_type_path": "u16"
+      },
+      "path_table": {
+        "path": "u16",
+        "short_type_path": "u16",
+        "ident": "u16",
+        "crate_name": null,
+        "module_path": null
+      },
+      "default": "{\"u16\":0}",
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "i8": {
+      "info": {
+        "kind": "opaque",
+        "item_type_path": "i8"
+      },
+      "path_table": {
+        "path": "i8",
+        "short_type_path": "i8",
+        "ident": "i8",
+        "crate_name": null,
+        "module_path": null
+      },
+      "default": "{\"i8\":0}",
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_ui::ui_node::Node": {
+      "info": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "display",
+            "type_path": "bevy_ui::ui_node::Display",
+            "docs": " Which layout algorithm to use when laying out this node's contents:\n   - [`Display::Flex`]: Use the Flexbox layout algorithm\n   - [`Display::Grid`]: Use the CSS Grid layout algorithm\n   - [`Display::None`]: Hide this node and perform layout as if it does not exist.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/display>"
+          },
+          {
+            "name": "position_type",
+            "type_path": "bevy_ui::ui_node::PositionType",
+            "docs": " Whether a node should be laid out in-flow with, or independently of its siblings:\n  - [`PositionType::Relative`]: Layout this node in-flow with other nodes using the usual (flexbox/grid) layout algorithm.\n  - [`PositionType::Absolute`]: Layout this node on top and independently of other nodes.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/position>"
+          },
+          {
+            "name": "overflow",
+            "type_path": "bevy_ui::ui_node::Overflow",
+            "docs": " Whether overflowing content should be displayed or clipped.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/overflow>"
+          },
+          {
+            "name": "overflow_clip_margin",
+            "type_path": "bevy_ui::ui_node::OverflowClipMargin",
+            "docs": " How the bounds of clipped content should be determined\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-clip-margin>"
+          },
+          {
+            "name": "left",
+            "type_path": "bevy_ui::geometry::Val",
+            "docs": " The horizontal position of the left edge of the node.\n  - For relatively positioned nodes, this is relative to the node's position as computed during regular layout.\n  - For absolutely positioned nodes, this is relative to the *parent* node's bounding box.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/left>"
+          },
+          {
+            "name": "right",
+            "type_path": "bevy_ui::geometry::Val",
+            "docs": " The horizontal position of the right edge of the node.\n  - For relatively positioned nodes, this is relative to the node's position as computed during regular layout.\n  - For absolutely positioned nodes, this is relative to the *parent* node's bounding box.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/right>"
+          },
+          {
+            "name": "top",
+            "type_path": "bevy_ui::geometry::Val",
+            "docs": " The vertical position of the top edge of the node.\n  - For relatively positioned nodes, this is relative to the node's position as computed during regular layout.\n  - For absolutely positioned nodes, this is relative to the *parent* node's bounding box.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/top>"
+          },
+          {
+            "name": "bottom",
+            "type_path": "bevy_ui::geometry::Val",
+            "docs": " The vertical position of the bottom edge of the node.\n  - For relatively positioned nodes, this is relative to the node's position as computed during regular layout.\n  - For absolutely positioned nodes, this is relative to the *parent* node's bounding box.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/bottom>"
+          },
+          {
+            "name": "width",
+            "type_path": "bevy_ui::geometry::Val",
+            "docs": " The ideal width of the node. `width` is used when it is within the bounds defined by `min_width` and `max_width`.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/width>"
+          },
+          {
+            "name": "height",
+            "type_path": "bevy_ui::geometry::Val",
+            "docs": " The ideal height of the node. `height` is used when it is within the bounds defined by `min_height` and `max_height`.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/height>"
+          },
+          {
+            "name": "min_width",
+            "type_path": "bevy_ui::geometry::Val",
+            "docs": " The minimum width of the node. `min_width` is used if it is greater than `width` and/or `max_width`.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/min-width>"
+          },
+          {
+            "name": "min_height",
+            "type_path": "bevy_ui::geometry::Val",
+            "docs": " The minimum height of the node. `min_height` is used if it is greater than `height` and/or `max_height`.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/min-height>"
+          },
+          {
+            "name": "max_width",
+            "type_path": "bevy_ui::geometry::Val",
+            "docs": " The maximum width of the node. `max_width` is used if it is within the bounds defined by `min_width` and `width`.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/max-width>"
+          },
+          {
+            "name": "max_height",
+            "type_path": "bevy_ui::geometry::Val",
+            "docs": " The maximum height of the node. `max_height` is used if it is within the bounds defined by `min_height` and `height`.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/max-height>"
+          },
+          {
+            "name": "aspect_ratio",
+            "type_path": "core::option::Option<f32>",
+            "docs": " The aspect ratio of the node (defined as `width / height`)\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio>"
+          },
+          {
+            "name": "align_items",
+            "type_path": "bevy_ui::ui_node::AlignItems",
+            "docs": " Used to control how each individual item is aligned by default within the space they're given.\n - For Flexbox containers, sets default cross axis alignment of the child items.\n - For CSS Grid containers, controls block (vertical) axis alignment of children of this grid container within their grid areas.\n\n This value is overridden if [`AlignSelf`] on the child node is set.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/align-items>"
+          },
+          {
+            "name": "justify_items",
+            "type_path": "bevy_ui::ui_node::JustifyItems",
+            "docs": " Used to control how each individual item is aligned by default within the space they're given.\n - For Flexbox containers, this property has no effect. See `justify_content` for main axis alignment of flex items.\n - For CSS Grid containers, sets default inline (horizontal) axis alignment of child items within their grid areas.\n\n This value is overridden if [`JustifySelf`] on the child node is set.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/justify-items>"
+          },
+          {
+            "name": "align_self",
+            "type_path": "bevy_ui::ui_node::AlignSelf",
+            "docs": " Used to control how the specified item is aligned within the space it's given.\n - For Flexbox items, controls cross axis alignment of the item.\n - For CSS Grid items, controls block (vertical) axis alignment of a grid item within its grid area.\n\n If set to `Auto`, alignment is inherited from the value of [`AlignItems`] set on the parent node.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/align-self>"
+          },
+          {
+            "name": "justify_self",
+            "type_path": "bevy_ui::ui_node::JustifySelf",
+            "docs": " Used to control how the specified item is aligned within the space it's given.\n - For Flexbox items, this property has no effect. See `justify_content` for main axis alignment of flex items.\n - For CSS Grid items, controls inline (horizontal) axis alignment of a grid item within its grid area.\n\n If set to `Auto`, alignment is inherited from the value of [`JustifyItems`] set on the parent node.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/justify-self>"
+          },
+          {
+            "name": "align_content",
+            "type_path": "bevy_ui::ui_node::AlignContent",
+            "docs": " Used to control how items are distributed.\n - For Flexbox containers, controls alignment of lines if `flex_wrap` is set to [`FlexWrap::Wrap`] and there are multiple lines of items.\n - For CSS Grid containers, controls alignment of grid rows.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/align-content>"
+          },
+          {
+            "name": "justify_content",
+            "type_path": "bevy_ui::ui_node::JustifyContent",
+            "docs": " Used to control how items are distributed.\n - For Flexbox containers, controls alignment of items in the main axis.\n - For CSS Grid containers, controls alignment of grid columns.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content>"
+          },
+          {
+            "name": "margin",
+            "type_path": "bevy_ui::geometry::UiRect",
+            "docs": " The amount of space around a node outside its border.\n\n If a percentage value is used, the percentage is calculated based on the width of the parent node.\n\n # Example\n ```\n # use bevy_ui::{Node, UiRect, Val};\n let node = Node {\n     margin: UiRect {\n         left: Val::Percent(10.),\n         right: Val::Percent(10.),\n         top: Val::Percent(15.),\n         bottom: Val::Percent(15.)\n     },\n     ..Default::default()\n };\n ```\n A node with this style and a parent with dimensions of 100px by 300px will have calculated margins of 10px on both left and right edges, and 15px on both top and bottom edges.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/margin>"
+          },
+          {
+            "name": "padding",
+            "type_path": "bevy_ui::geometry::UiRect",
+            "docs": " The amount of space between the edges of a node and its contents.\n\n If a percentage value is used, the percentage is calculated based on the width of the parent node.\n\n # Example\n ```\n # use bevy_ui::{Node, UiRect, Val};\n let node = Node {\n     padding: UiRect {\n         left: Val::Percent(1.),\n         right: Val::Percent(2.),\n         top: Val::Percent(3.),\n         bottom: Val::Percent(4.)\n     },\n     ..Default::default()\n };\n ```\n A node with this style and a parent with dimensions of 300px by 100px will have calculated padding of 3px on the left, 6px on the right, 9px on the top and 12px on the bottom.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/padding>"
+          },
+          {
+            "name": "border",
+            "type_path": "bevy_ui::geometry::UiRect",
+            "docs": " The amount of space between the margins of a node and its padding.\n\n If a percentage value is used, the percentage is calculated based on the width of the parent node.\n\n The size of the node will be expanded if there are constraints that prevent the layout algorithm from placing the border within the existing node boundary.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/border-width>"
+          },
+          {
+            "name": "flex_direction",
+            "type_path": "bevy_ui::ui_node::FlexDirection",
+            "docs": " Whether a Flexbox container should be a row or a column. This property has no effect on Grid nodes.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction>"
+          },
+          {
+            "name": "flex_wrap",
+            "type_path": "bevy_ui::ui_node::FlexWrap",
+            "docs": " Whether a Flexbox container should wrap its contents onto multiple lines if they overflow. This property has no effect on Grid nodes.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap>"
+          },
+          {
+            "name": "flex_grow",
+            "type_path": "f32",
+            "docs": " Defines how much a flexbox item should grow if there's space available. Defaults to 0 (don't grow at all).\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow>"
+          },
+          {
+            "name": "flex_shrink",
+            "type_path": "f32",
+            "docs": " Defines how much a flexbox item should shrink if there's not enough space available. Defaults to 1.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/flex-shrink>"
+          },
+          {
+            "name": "flex_basis",
+            "type_path": "bevy_ui::geometry::Val",
+            "docs": " The initial length of a flexbox in the main axis, before flex growing/shrinking properties are applied.\n\n `flex_basis` overrides `size` on the main axis if both are set, but it obeys the bounds defined by `min_size` and `max_size`.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis>"
+          },
+          {
+            "name": "row_gap",
+            "type_path": "bevy_ui::geometry::Val",
+            "docs": " The size of the gutters between items in a vertical flexbox layout or between rows in a grid layout.\n\n Note: Values of `Val::Auto` are not valid and are treated as zero.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/row-gap>"
+          },
+          {
+            "name": "column_gap",
+            "type_path": "bevy_ui::geometry::Val",
+            "docs": " The size of the gutters between items in a horizontal flexbox layout or between column in a grid layout.\n\n Note: Values of `Val::Auto` are not valid and are treated as zero.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/column-gap>"
+          },
+          {
+            "name": "grid_auto_flow",
+            "type_path": "bevy_ui::ui_node::GridAutoFlow",
+            "docs": " Controls whether automatically placed grid items are placed row-wise or column-wise as well as whether the sparse or dense packing algorithm is used.\n Only affects Grid layouts.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow>"
+          },
+          {
+            "name": "grid_template_rows",
+            "type_path": "alloc::vec::Vec<bevy_ui::ui_node::RepeatedGridTrack>",
+            "docs": " Defines the number of rows a grid has and the sizes of those rows. If grid items are given explicit placements then more rows may\n be implicitly generated by items that are placed out of bounds. The sizes of those rows are controlled by `grid_auto_rows` property.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows>"
+          },
+          {
+            "name": "grid_template_columns",
+            "type_path": "alloc::vec::Vec<bevy_ui::ui_node::RepeatedGridTrack>",
+            "docs": " Defines the number of columns a grid has and the sizes of those columns. If grid items are given explicit placements then more columns may\n be implicitly generated by items that are placed out of bounds. The sizes of those columns are controlled by `grid_auto_columns` property.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns>"
+          },
+          {
+            "name": "grid_auto_rows",
+            "type_path": "alloc::vec::Vec<bevy_ui::ui_node::GridTrack>",
+            "docs": " Defines the size of implicitly created rows. Rows are created implicitly when grid items are given explicit placements that are out of bounds\n of the rows explicitly created using `grid_template_rows`.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows>"
+          },
+          {
+            "name": "grid_auto_columns",
+            "type_path": "alloc::vec::Vec<bevy_ui::ui_node::GridTrack>",
+            "docs": " Defines the size of implicitly created columns. Columns are created implicitly when grid items are given explicit placements that are out of bounds\n of the columns explicitly created using `grid_template_columns`.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-columns>"
+          },
+          {
+            "name": "grid_row",
+            "type_path": "bevy_ui::ui_node::GridPlacement",
+            "docs": " The row in which a grid item starts and how many rows it spans.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row>"
+          },
+          {
+            "name": "grid_column",
+            "type_path": "bevy_ui::ui_node::GridPlacement",
+            "docs": " The column in which a grid item starts and how many columns it spans.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column>"
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_ui::ui_node::Node",
+        "short_type_path": "Node",
+        "ident": "Node",
+        "crate_name": "bevy_ui",
+        "module_path": "bevy_ui::ui_node"
+      },
+      "default": "{\"bevy_ui::ui_node::Node\":{\"display\":\"Flex\",\"position_type\":\"Relative\",\"overflow\":{\"x\":\"Visible\",\"y\":\"Visible\"},\"overflow_clip_margin\":{\"visual_box\":\"ContentBox\",\"margin\":0.0},\"left\":\"Auto\",\"right\":\"Auto\",\"top\":\"Auto\",\"bottom\":\"Auto\",\"width\":\"Auto\",\"height\":\"Auto\",\"min_width\":\"Auto\",\"min_height\":\"Auto\",\"max_width\":\"Auto\",\"max_height\":\"Auto\",\"aspect_ratio\":null,\"align_items\":\"Default\",\"justify_items\":\"Default\",\"align_self\":\"Auto\",\"justify_self\":\"Auto\",\"align_content\":\"Default\",\"justify_content\":\"Default\",\"margin\":{\"left\":{\"Px\":0.0},\"right\":{\"Px\":0.0},\"top\":{\"Px\":0.0},\"bottom\":{\"Px\":0.0}},\"padding\":{\"left\":{\"Px\":0.0},\"right\":{\"Px\":0.0},\"top\":{\"Px\":0.0},\"bottom\":{\"Px\":0.0}},\"border\":{\"left\":{\"Px\":0.0},\"right\":{\"Px\":0.0},\"top\":{\"Px\":0.0},\"bottom\":{\"Px\":0.0}},\"flex_direction\":\"Row\",\"flex_wrap\":\"NoWrap\",\"flex_grow\":0.0,\"flex_shrink\":1.0,\"flex_basis\":\"Auto\",\"row_gap\":{\"Px\":0.0},\"column_gap\":{\"Px\":0.0},\"grid_auto_flow\":\"Row\",\"grid_template_rows\":[],\"grid_template_columns\":[],\"grid_auto_rows\":[],\"grid_auto_columns\":[],\"grid_row\":{\"start\":null,\"span\":1,\"end\":null},\"grid_column\":{\"start\":null,\"span\":1,\"end\":null}}}",
+      "docs": " The base component for UI entities. It describes UI layout and style properties.\n\n When defining new types of UI entities, require [`Node`] to make them behave like UI nodes.\n\n Nodes can be laid out using either Flexbox or CSS Grid Layout.\n\n See below for general learning resources and for documentation on the individual style properties.\n\n ### Flexbox\n\n - [MDN: Basic Concepts of Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)\n - [A Complete Guide To Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) by CSS Tricks. This is detailed guide with illustrations and comprehensive written explanation of the different Flexbox properties and how they work.\n - [Flexbox Froggy](https://flexboxfroggy.com/). An interactive tutorial/game that teaches the essential parts of Flexbox in a fun engaging way.\n\n ### CSS Grid\n\n - [MDN: Basic Concepts of Grid Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout)\n - [A Complete Guide To CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) by CSS Tricks. This is detailed guide with illustrations and comprehensive written explanation of the different CSS Grid properties and how they work.\n - [CSS Grid Garden](https://cssgridgarden.com/). An interactive tutorial/game that teaches the essential parts of CSS Grid in a fun engaging way.\n\n # See also\n\n - [`RelativeCursorPosition`](crate::RelativeCursorPosition) to obtain the cursor position relative to this node\n - [`Interaction`](crate::Interaction) to obtain the interaction state of this node",
+      "traits": {
+        "component": true,
+        "resource": false
+      }
+    },
+    "bevy_math::primitives::dim2::Circle": {
+      "info": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "radius",
+            "type_path": "f32",
+            "docs": " The radius of the circle"
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_math::primitives::dim2::Circle",
+        "short_type_path": "Circle",
+        "ident": "Circle",
+        "crate_name": "bevy_math",
+        "module_path": "bevy_math::primitives::dim2"
+      },
+      "default": "{\"bevy_math::primitives::dim2::Circle\":{\"radius\":0.5}}",
+      "docs": " A circle primitive, representing the set of points some distance from the origin",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_color::oklaba::Oklaba": {
+      "info": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "lightness",
+            "type_path": "f32",
+            "docs": " The 'lightness' channel. [0.0, 1.0]"
+          },
+          {
+            "name": "a",
+            "type_path": "f32",
+            "docs": " The 'a' channel. [-1.0, 1.0]"
+          },
+          {
+            "name": "b",
+            "type_path": "f32",
+            "docs": " The 'b' channel. [-1.0, 1.0]"
+          },
+          {
+            "name": "alpha",
+            "type_path": "f32",
+            "docs": " The alpha channel. [0.0, 1.0]"
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_color::oklaba::Oklaba",
+        "short_type_path": "Oklaba",
+        "ident": "Oklaba",
+        "crate_name": "bevy_color",
+        "module_path": "bevy_color::oklaba"
+      },
+      "default": "{\"bevy_color::oklaba::Oklaba\":{\"lightness\":1.0,\"a\":0.0,\"b\":0.0,\"alpha\":1.0}}",
+      "docs": " Color in Oklab color space, with alpha\n <div>\n </div>",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "u128": {
+      "info": {
+        "kind": "opaque",
+        "item_type_path": "u128"
+      },
+      "path_table": {
+        "path": "u128",
+        "short_type_path": "u128",
+        "ident": "u128",
+        "crate_name": null,
+        "module_path": null
+      },
+      "default": "{\"u128\":0}",
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "isize": {
+      "info": {
+        "kind": "opaque",
+        "item_type_path": "isize"
+      },
+      "path_table": {
+        "path": "isize",
+        "short_type_path": "isize",
+        "ident": "isize",
+        "crate_name": null,
+        "module_path": null
+      },
+      "default": "{\"isize\":0}",
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "core::option::Option<bevy_color::color::Color>": {
+      "info": {
+        "kind": "enum",
+        "variants": [
+          {
+            "kind": "unit",
+            "name": "None",
+            "docs": null
+          },
+          {
+            "kind": "tuple",
+            "name": "Some",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "bevy_color::color::Color",
+                "docs": null
+              }
+            ],
+            "docs": null
+          }
+        ]
+      },
+      "path_table": {
+        "path": "core::option::Option<bevy_color::color::Color>",
+        "short_type_path": "Option<Color>",
+        "ident": "Option",
+        "crate_name": "core",
+        "module_path": "core::option"
+      },
+      "default": null,
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_ui::ui_node::AlignItems": {
+      "info": {
+        "kind": "enum",
+        "variants": [
+          {
+            "kind": "unit",
+            "name": "Default",
+            "docs": " The items are packed in their default position as if no alignment was applied."
+          },
+          {
+            "kind": "unit",
+            "name": "Start",
+            "docs": " The items are packed towards the start of the axis."
+          },
+          {
+            "kind": "unit",
+            "name": "End",
+            "docs": " The items are packed towards the end of the axis."
+          },
+          {
+            "kind": "unit",
+            "name": "FlexStart",
+            "docs": " The items are packed towards the start of the axis, unless the flex direction is reversed;\n then they are packed towards the end of the axis."
+          },
+          {
+            "kind": "unit",
+            "name": "FlexEnd",
+            "docs": " The items are packed towards the end of the axis, unless the flex direction is reversed;\n then they are packed towards the start of the axis."
+          },
+          {
+            "kind": "unit",
+            "name": "Center",
+            "docs": " The items are packed along the center of the axis."
+          },
+          {
+            "kind": "unit",
+            "name": "Baseline",
+            "docs": " The items are packed such that their baselines align."
+          },
+          {
+            "kind": "unit",
+            "name": "Stretch",
+            "docs": " The items are stretched to fill the space they're given."
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_ui::ui_node::AlignItems",
+        "short_type_path": "AlignItems",
+        "ident": "AlignItems",
+        "crate_name": "bevy_ui",
+        "module_path": "bevy_ui::ui_node"
+      },
+      "default": "{\"bevy_ui::ui_node::AlignItems\":\"Default\"}",
+      "docs": " Used to control how each individual item is aligned by default within the space they're given.\n - For Flexbox containers, sets default cross axis alignment of the child items.\n - For CSS Grid containers, controls block (vertical) axis alignment of children of this grid container within their grid areas.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/align-items>",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "alloc::string::String": {
+      "info": {
+        "kind": "opaque",
+        "item_type_path": "alloc::string::String"
+      },
+      "path_table": {
+        "path": "alloc::string::String",
+        "short_type_path": "String",
+        "ident": "String",
+        "crate_name": "alloc",
+        "module_path": "alloc::string"
+      },
+      "default": "{\"alloc::string::String\":\"\"}",
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_ui::ui_node::MaxTrackSizingFunction": {
+      "info": {
+        "kind": "enum",
+        "variants": [
+          {
+            "kind": "tuple",
+            "name": "Px",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "f32",
+                "docs": null
+              }
+            ],
+            "docs": " Track maximum size should be a fixed pixel value"
+          },
+          {
+            "kind": "tuple",
+            "name": "Percent",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "f32",
+                "docs": null
+              }
+            ],
+            "docs": " Track maximum size should be a percentage value"
+          },
+          {
+            "kind": "unit",
+            "name": "MinContent",
+            "docs": " Track maximum size should be content sized under a min-content constraint"
+          },
+          {
+            "kind": "unit",
+            "name": "MaxContent",
+            "docs": " Track maximum size should be content sized under a max-content constraint"
+          },
+          {
+            "kind": "tuple",
+            "name": "FitContentPx",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "f32",
+                "docs": null
+              }
+            ],
+            "docs": " Track maximum size should be sized according to the fit-content formula with a fixed pixel limit"
+          },
+          {
+            "kind": "tuple",
+            "name": "FitContentPercent",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "f32",
+                "docs": null
+              }
+            ],
+            "docs": " Track maximum size should be sized according to the fit-content formula with a percentage limit"
+          },
+          {
+            "kind": "unit",
+            "name": "Auto",
+            "docs": " Track maximum size should be automatically sized"
+          },
+          {
+            "kind": "tuple",
+            "name": "Fraction",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "f32",
+                "docs": null
+              }
+            ],
+            "docs": " The dimension as a fraction of the total available grid space (`fr` units in CSS)\n Specified value is the numerator of the fraction. Denominator is the sum of all fractions specified in that grid dimension.\n\n Spec: <https://www.w3.org/TR/css3-grid-layout/#fr-unit>"
+          },
+          {
+            "kind": "tuple",
+            "name": "VMin",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "f32",
+                "docs": null
+              }
+            ],
+            "docs": " Track maximum size should be a percent of the viewport's smaller dimension."
+          },
+          {
+            "kind": "tuple",
+            "name": "VMax",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "f32",
+                "docs": null
+              }
+            ],
+            "docs": " Track maximum size should be a percent of the viewport's smaller dimension."
+          },
+          {
+            "kind": "tuple",
+            "name": "Vh",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "f32",
+                "docs": null
+              }
+            ],
+            "docs": " Track maximum size should be a percent of the viewport's height dimension."
+          },
+          {
+            "kind": "tuple",
+            "name": "Vw",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "f32",
+                "docs": null
+              }
+            ],
+            "docs": " Track maximum size should be a percent of the viewport's width dimension."
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_ui::ui_node::MaxTrackSizingFunction",
+        "short_type_path": "MaxTrackSizingFunction",
+        "ident": "MaxTrackSizingFunction",
+        "crate_name": "bevy_ui",
+        "module_path": "bevy_ui::ui_node"
+      },
+      "default": "{\"bevy_ui::ui_node::MaxTrackSizingFunction\":\"Auto\"}",
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "core::num::NonZeroU16": {
+      "info": {
+        "kind": "opaque",
+        "item_type_path": "core::num::NonZeroU16"
+      },
+      "path_table": {
+        "path": "core::num::NonZeroU16",
+        "short_type_path": "NonZeroU16",
+        "ident": "NonZeroU16",
+        "crate_name": "core",
+        "module_path": "core::num"
+      },
+      "default": null,
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_ui::ui_node::AlignSelf": {
+      "info": {
+        "kind": "enum",
+        "variants": [
+          {
+            "kind": "unit",
+            "name": "Auto",
+            "docs": " Use the parent node's [`AlignItems`] value to determine how this item should be aligned."
+          },
+          {
+            "kind": "unit",
+            "name": "Start",
+            "docs": " This item will be aligned with the start of the axis."
+          },
+          {
+            "kind": "unit",
+            "name": "End",
+            "docs": " This item will be aligned with the end of the axis."
+          },
+          {
+            "kind": "unit",
+            "name": "FlexStart",
+            "docs": " This item will be aligned with the start of the axis, unless the flex direction is reversed;\n then it will be aligned with the end of the axis."
+          },
+          {
+            "kind": "unit",
+            "name": "FlexEnd",
+            "docs": " This item will be aligned with the end of the axis, unless the flex direction is reversed;\n then it will be aligned with the start of the axis."
+          },
+          {
+            "kind": "unit",
+            "name": "Center",
+            "docs": " This item will be aligned along the center of the axis."
+          },
+          {
+            "kind": "unit",
+            "name": "Baseline",
+            "docs": " This item will be aligned at the baseline."
+          },
+          {
+            "kind": "unit",
+            "name": "Stretch",
+            "docs": " This item will be stretched to fill the container."
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_ui::ui_node::AlignSelf",
+        "short_type_path": "AlignSelf",
+        "ident": "AlignSelf",
+        "crate_name": "bevy_ui",
+        "module_path": "bevy_ui::ui_node"
+      },
+      "default": "{\"bevy_ui::ui_node::AlignSelf\":\"Auto\"}",
+      "docs": " Used to control how the specified item is aligned within the space it's given.\n - For Flexbox items, controls cross axis alignment of the item.\n - For CSS Grid items, controls block (vertical) axis alignment of a grid item within its grid area.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/align-self>",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_ui::ui_node::OverflowAxis": {
+      "info": {
+        "kind": "enum",
+        "variants": [
+          {
+            "kind": "unit",
+            "name": "Visible",
+            "docs": " Show overflowing items."
+          },
+          {
+            "kind": "unit",
+            "name": "Clip",
+            "docs": " Hide overflowing items by clipping."
+          },
+          {
+            "kind": "unit",
+            "name": "Hidden",
+            "docs": " Hide overflowing items by influencing layout and then clipping."
+          },
+          {
+            "kind": "unit",
+            "name": "Scroll",
+            "docs": " Scroll overflowing items."
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_ui::ui_node::OverflowAxis",
+        "short_type_path": "OverflowAxis",
+        "ident": "OverflowAxis",
+        "crate_name": "bevy_ui",
+        "module_path": "bevy_ui::ui_node"
+      },
+      "default": "{\"bevy_ui::ui_node::OverflowAxis\":\"Visible\"}",
+      "docs": " Whether to show or hide overflowing items",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_core::name::Name": {
+      "info": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "hash",
+            "type_path": "u64",
+            "docs": null
+          },
+          {
+            "name": "name",
+            "type_path": "alloc::borrow::Cow<str>",
+            "docs": null
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_core::name::Name",
+        "short_type_path": "Name",
+        "ident": "Name",
+        "crate_name": "bevy_core",
+        "module_path": "bevy_core::name"
+      },
+      "default": "{\"bevy_core::name::Name\":\"\"}",
+      "docs": " Component used to identify an entity. Stores a hash for faster comparisons.\n\n The hash is eagerly re-computed upon each update to the name.\n\n [`Name`] should not be treated as a globally unique identifier for entities,\n as multiple entities can have the same name.  [`Entity`] should be\n used instead as the default unique identifier.",
+      "traits": {
+        "component": true,
+        "resource": false
+      }
+    },
+    "bevy_sprite::texture_slice::border_rect::BorderRect": {
+      "info": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "left",
+            "type_path": "f32",
+            "docs": " Pixel padding to the left"
+          },
+          {
+            "name": "right",
+            "type_path": "f32",
+            "docs": " Pixel padding to the right"
+          },
+          {
+            "name": "top",
+            "type_path": "f32",
+            "docs": " Pixel padding to the top"
+          },
+          {
+            "name": "bottom",
+            "type_path": "f32",
+            "docs": " Pixel padding to the bottom"
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_sprite::texture_slice::border_rect::BorderRect",
+        "short_type_path": "BorderRect",
+        "ident": "BorderRect",
+        "crate_name": "bevy_sprite",
+        "module_path": "bevy_sprite::texture_slice::border_rect"
+      },
+      "default": null,
+      "docs": " Struct defining a [`Sprite`](crate::Sprite) border with padding values",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_text::text::TextLayout": {
+      "info": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "justify",
+            "type_path": "bevy_text::text::JustifyText",
+            "docs": " The text's internal alignment.\n Should not affect its position within a container."
+          },
+          {
+            "name": "linebreak",
+            "type_path": "bevy_text::text::LineBreak",
+            "docs": " How the text should linebreak when running out of the bounds determined by `max_size`."
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_text::text::TextLayout",
+        "short_type_path": "TextLayout",
+        "ident": "TextLayout",
+        "crate_name": "bevy_text",
+        "module_path": "bevy_text::text"
+      },
+      "default": "{\"bevy_text::text::TextLayout\":{\"justify\":\"Left\",\"linebreak\":\"WordBoundary\"}}",
+      "docs": " Component with text format settings for a block of text.\n\n A block of text is composed of text spans, which each have a separate string value and [`TextFont`]. Text\n spans associated with a text block are collected into [`ComputedTextBlock`] for layout, and then inserted\n to [`TextLayoutInfo`] for rendering.\n\n See [`Text2d`](crate::Text2d) for the core component of 2d text, and `Text` in `bevy_ui` for UI text.",
+      "traits": {
+        "component": true,
+        "resource": false
+      }
+    },
+    "bevy_render::alpha::AlphaMode": {
+      "info": {
+        "kind": "enum",
+        "variants": [
+          {
+            "kind": "unit",
+            "name": "Opaque",
+            "docs": " Base color alpha values are overridden to be fully opaque (1.0)."
+          },
+          {
+            "kind": "tuple",
+            "name": "Mask",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "f32",
+                "docs": null
+              }
+            ],
+            "docs": " Reduce transparency to fully opaque or fully transparent\n based on a threshold.\n\n Compares the base color alpha value to the specified threshold.\n If the value is below the threshold,\n considers the color to be fully transparent (alpha is set to 0.0).\n If it is equal to or above the threshold,\n considers the color to be fully opaque (alpha is set to 1.0)."
+          },
+          {
+            "kind": "unit",
+            "name": "Blend",
+            "docs": " The base color alpha value defines the opacity of the color.\n Standard alpha-blending is used to blend the fragment's color\n with the color behind it."
+          },
+          {
+            "kind": "unit",
+            "name": "Premultiplied",
+            "docs": " Similar to [`AlphaMode::Blend`], however assumes RGB channel values are\n [premultiplied](https://en.wikipedia.org/wiki/Alpha_compositing#Straight_versus_premultiplied).\n\n For otherwise constant RGB values, behaves more like [`AlphaMode::Blend`] for\n alpha values closer to 1.0, and more like [`AlphaMode::Add`] for\n alpha values closer to 0.0.\n\n Can be used to avoid “border” or “outline” artifacts that can occur\n when using plain alpha-blended textures."
+          },
+          {
+            "kind": "unit",
+            "name": "AlphaToCoverage",
+            "docs": " Spreads the fragment out over a hardware-dependent number of sample\n locations proportional to the alpha value. This requires multisample\n antialiasing; if MSAA isn't on, this is identical to\n [`AlphaMode::Mask`] with a value of 0.5.\n\n Alpha to coverage provides improved performance and better visual\n fidelity over [`AlphaMode::Blend`], as Bevy doesn't have to sort objects\n when it's in use. It's especially useful for complex transparent objects\n like foliage.\n\n [alpha to coverage]: https://en.wikipedia.org/wiki/Alpha_to_coverage"
+          },
+          {
+            "kind": "unit",
+            "name": "Add",
+            "docs": " Combines the color of the fragments with the colors behind them in an\n additive process, (i.e. like light) producing lighter results.\n\n Black produces no effect. Alpha values can be used to modulate the result.\n\n Useful for effects like holograms, ghosts, lasers and other energy beams."
+          },
+          {
+            "kind": "unit",
+            "name": "Multiply",
+            "docs": " Combines the color of the fragments with the colors behind them in a\n multiplicative process, (i.e. like pigments) producing darker results.\n\n White produces no effect. Alpha values can be used to modulate the result.\n\n Useful for effects like stained glass, window tint film and some colored liquids."
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_render::alpha::AlphaMode",
+        "short_type_path": "AlphaMode",
+        "ident": "AlphaMode",
+        "crate_name": "bevy_render",
+        "module_path": "bevy_render::alpha"
+      },
+      "default": "{\"bevy_render::alpha::AlphaMode\":\"Opaque\"}",
+      "docs": " Sets how a material's base color alpha channel is used for transparency.",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "glam::Vec2": {
+      "info": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "x",
+            "type_path": "f32",
+            "docs": null
+          },
+          {
+            "name": "y",
+            "type_path": "f32",
+            "docs": null
+          }
+        ]
+      },
+      "path_table": {
+        "path": "glam::Vec2",
+        "short_type_path": "Vec2",
+        "ident": "Vec2",
+        "crate_name": "glam",
+        "module_path": "glam"
+      },
+      "default": "{\"glam::Vec2\":[0.0,0.0]}",
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "u32": {
+      "info": {
+        "kind": "opaque",
+        "item_type_path": "u32"
+      },
+      "path_table": {
+        "path": "u32",
+        "short_type_path": "u32",
+        "ident": "u32",
+        "crate_name": null,
+        "module_path": null
+      },
+      "default": "{\"u32\":0}",
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_ui::ui_node::PositionType": {
+      "info": {
+        "kind": "enum",
+        "variants": [
+          {
+            "kind": "unit",
+            "name": "Relative",
+            "docs": " Relative to all other nodes with the [`PositionType::Relative`] value."
+          },
+          {
+            "kind": "unit",
+            "name": "Absolute",
+            "docs": " Independent of all other nodes, but relative to its parent node."
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_ui::ui_node::PositionType",
+        "short_type_path": "PositionType",
+        "ident": "PositionType",
+        "crate_name": "bevy_ui",
+        "module_path": "bevy_ui::ui_node"
+      },
+      "default": "{\"bevy_ui::ui_node::PositionType\":\"Relative\"}",
+      "docs": " The strategy used to position this node",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_ui::ui_node::Overflow": {
+      "info": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "x",
+            "type_path": "bevy_ui::ui_node::OverflowAxis",
+            "docs": " Whether to show or clip overflowing items on the x axis"
+          },
+          {
+            "name": "y",
+            "type_path": "bevy_ui::ui_node::OverflowAxis",
+            "docs": " Whether to show or clip overflowing items on the y axis"
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_ui::ui_node::Overflow",
+        "short_type_path": "Overflow",
+        "ident": "Overflow",
+        "crate_name": "bevy_ui",
+        "module_path": "bevy_ui::ui_node"
+      },
+      "default": "{\"bevy_ui::ui_node::Overflow\":{\"x\":\"Visible\",\"y\":\"Visible\"}}",
+      "docs": " Whether to show or hide overflowing items",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "glam::Affine3A": {
+      "info": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "matrix3",
+            "type_path": "glam::Mat3A",
+            "docs": null
+          },
+          {
+            "name": "translation",
+            "type_path": "glam::Vec3A",
+            "docs": null
+          }
+        ]
+      },
+      "path_table": {
+        "path": "glam::Affine3A",
+        "short_type_path": "Affine3A",
+        "ident": "Affine3A",
+        "crate_name": "glam",
+        "module_path": "glam"
+      },
+      "default": "{\"glam::Affine3A\":[1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0]}",
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "alloc::vec::Vec<bevy_ui::ui_node::GridTrack>": {
+      "info": {
+        "kind": "list",
+        "item_type_path": "bevy_ui::ui_node::GridTrack"
+      },
+      "path_table": {
+        "path": "alloc::vec::Vec<bevy_ui::ui_node::GridTrack>",
+        "short_type_path": "Vec<GridTrack>",
+        "ident": "Vec",
+        "crate_name": "alloc",
+        "module_path": "alloc::vec"
+      },
+      "default": null,
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_ui::ui_node::FlexWrap": {
+      "info": {
+        "kind": "enum",
+        "variants": [
+          {
+            "kind": "unit",
+            "name": "NoWrap",
+            "docs": " Single line, will overflow if needed."
+          },
+          {
+            "kind": "unit",
+            "name": "Wrap",
+            "docs": " Multiple lines, if needed."
+          },
+          {
+            "kind": "unit",
+            "name": "WrapReverse",
+            "docs": " Same as [`FlexWrap::Wrap`] but new lines will appear before the previous one."
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_ui::ui_node::FlexWrap",
+        "short_type_path": "FlexWrap",
+        "ident": "FlexWrap",
+        "crate_name": "bevy_ui",
+        "module_path": "bevy_ui::ui_node"
+      },
+      "default": "{\"bevy_ui::ui_node::FlexWrap\":\"NoWrap\"}",
+      "docs": " Defines if flexbox items appear on a single line or on multiple lines",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_color::laba::Laba": {
+      "info": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "lightness",
+            "type_path": "f32",
+            "docs": " The lightness channel. [0.0, 1.5]"
+          },
+          {
+            "name": "a",
+            "type_path": "f32",
+            "docs": " The a axis. [-1.5, 1.5]"
+          },
+          {
+            "name": "b",
+            "type_path": "f32",
+            "docs": " The b axis. [-1.5, 1.5]"
+          },
+          {
+            "name": "alpha",
+            "type_path": "f32",
+            "docs": " The alpha channel. [0.0, 1.0]"
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_color::laba::Laba",
+        "short_type_path": "Laba",
+        "ident": "Laba",
+        "crate_name": "bevy_color",
+        "module_path": "bevy_color::laba"
+      },
+      "default": "{\"bevy_color::laba::Laba\":{\"lightness\":1.0,\"a\":0.0,\"b\":0.0,\"alpha\":1.0}}",
+      "docs": " Color in LAB color space, with alpha\n <div>\n </div>",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "usize": {
+      "info": {
+        "kind": "opaque",
+        "item_type_path": "usize"
+      },
+      "path_table": {
+        "path": "usize",
+        "short_type_path": "usize",
+        "ident": "usize",
+        "crate_name": null,
+        "module_path": null
+      },
+      "default": "{\"usize\":0}",
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_ui::geometry::Val": {
+      "info": {
+        "kind": "enum",
+        "variants": [
+          {
+            "kind": "unit",
+            "name": "Auto",
+            "docs": " Automatically determine the value based on the context and other [`Node`](crate::Node) properties."
+          },
+          {
+            "kind": "tuple",
+            "name": "Px",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "f32",
+                "docs": null
+              }
+            ],
+            "docs": " Set this value in logical pixels."
+          },
+          {
+            "kind": "tuple",
+            "name": "Percent",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "f32",
+                "docs": null
+              }
+            ],
+            "docs": " Set the value as a percentage of its parent node's length along a specific axis.\n\n If the UI node has no parent, the percentage is calculated based on the window's length\n along the corresponding axis.\n\n The chosen axis depends on the [`Node`](crate::Node) field set:\n * For `flex_basis`, the percentage is relative to the main-axis length determined by the `flex_direction`.\n * For `gap`, `min_size`, `size`, and `max_size`:\n   - `width` is relative to the parent's width.\n   - `height` is relative to the parent's height.\n * For `margin`, `padding`, and `border` values: the percentage is relative to the parent node's width.\n * For positions, `left` and `right` are relative to the parent's width, while `bottom` and `top` are relative to the parent's height."
+          },
+          {
+            "kind": "tuple",
+            "name": "Vw",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "f32",
+                "docs": null
+              }
+            ],
+            "docs": " Set this value in percent of the viewport width"
+          },
+          {
+            "kind": "tuple",
+            "name": "Vh",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "f32",
+                "docs": null
+              }
+            ],
+            "docs": " Set this value in percent of the viewport height"
+          },
+          {
+            "kind": "tuple",
+            "name": "VMin",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "f32",
+                "docs": null
+              }
+            ],
+            "docs": " Set this value in percent of the viewport's smaller dimension."
+          },
+          {
+            "kind": "tuple",
+            "name": "VMax",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "f32",
+                "docs": null
+              }
+            ],
+            "docs": " Set this value in percent of the viewport's larger dimension."
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_ui::geometry::Val",
+        "short_type_path": "Val",
+        "ident": "Val",
+        "crate_name": "bevy_ui",
+        "module_path": "bevy_ui::geometry"
+      },
+      "default": "{\"bevy_ui::geometry::Val\":\"Auto\"}",
+      "docs": " Represents the possible value types for layout properties.\n\n This enum allows specifying values for various [`Node`](crate::Node) properties in different units,\n such as logical pixels, percentages, or automatically determined values.",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_math::primitives::dim3::Cylinder": {
+      "info": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "radius",
+            "type_path": "f32",
+            "docs": " The radius of the cylinder"
+          },
+          {
+            "name": "half_height",
+            "type_path": "f32",
+            "docs": " The half height of the cylinder"
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_math::primitives::dim3::Cylinder",
+        "short_type_path": "Cylinder",
+        "ident": "Cylinder",
+        "crate_name": "bevy_math",
+        "module_path": "bevy_math::primitives::dim3"
+      },
+      "default": "{\"bevy_math::primitives::dim3::Cylinder\":{\"radius\":0.5,\"half_height\":0.5}}",
+      "docs": " A cylinder primitive centered on the origin",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "core::option::Option<f32>": {
+      "info": {
+        "kind": "enum",
+        "variants": [
+          {
+            "kind": "unit",
+            "name": "None",
+            "docs": null
+          },
+          {
+            "kind": "tuple",
+            "name": "Some",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "f32",
+                "docs": null
+              }
+            ],
+            "docs": null
+          }
+        ]
+      },
+      "path_table": {
+        "path": "core::option::Option<f32>",
+        "short_type_path": "Option<f32>",
+        "ident": "Option",
+        "crate_name": "core",
+        "module_path": "core::option"
+      },
+      "default": null,
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_color::hwba::Hwba": {
+      "info": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "hue",
+            "type_path": "f32",
+            "docs": " The hue channel. [0.0, 360.0]"
+          },
+          {
+            "name": "whiteness",
+            "type_path": "f32",
+            "docs": " The whiteness channel. [0.0, 1.0]"
+          },
+          {
+            "name": "blackness",
+            "type_path": "f32",
+            "docs": " The blackness channel. [0.0, 1.0]"
+          },
+          {
+            "name": "alpha",
+            "type_path": "f32",
+            "docs": " The alpha channel. [0.0, 1.0]"
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_color::hwba::Hwba",
+        "short_type_path": "Hwba",
+        "ident": "Hwba",
+        "crate_name": "bevy_color",
+        "module_path": "bevy_color::hwba"
+      },
+      "default": "{\"bevy_color::hwba::Hwba\":{\"hue\":0.0,\"whiteness\":0.0,\"blackness\":1.0,\"alpha\":1.0}}",
+      "docs": " Color in Hue-Whiteness-Blackness (HWB) color space with alpha.\n Further information on this color model can be found on [Wikipedia](https://en.wikipedia.org/wiki/HWB_color_model).\n <div>\n </div>",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_ui::ui_node::Display": {
+      "info": {
+        "kind": "enum",
+        "variants": [
+          {
+            "kind": "unit",
+            "name": "Flex",
+            "docs": " Use Flexbox layout model to determine the position of this [`Node`]'s children."
+          },
+          {
+            "kind": "unit",
+            "name": "Grid",
+            "docs": " Use CSS Grid layout model to determine the position of this [`Node`]'s children."
+          },
+          {
+            "kind": "unit",
+            "name": "Block",
+            "docs": " Use CSS Block layout model to determine the position of this [`Node`]'s children."
+          },
+          {
+            "kind": "unit",
+            "name": "None",
+            "docs": " Use no layout, don't render this node and its children.\n\n If you want to hide a node and its children,\n but keep its layout in place, set its [`Visibility`] component instead."
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_ui::ui_node::Display",
+        "short_type_path": "Display",
+        "ident": "Display",
+        "crate_name": "bevy_ui",
+        "module_path": "bevy_ui::ui_node"
+      },
+      "default": "{\"bevy_ui::ui_node::Display\":\"Flex\"}",
+      "docs": " Defines the layout model used by this node.\n\n Part of the [`Node`] component.",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bool": {
+      "info": {
+        "kind": "opaque",
+        "item_type_path": "bool"
+      },
+      "path_table": {
+        "path": "bool",
+        "short_type_path": "bool",
+        "ident": "bool",
+        "crate_name": null,
+        "module_path": null
+      },
+      "default": "{\"bool\":false}",
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "u8": {
+      "info": {
+        "kind": "opaque",
+        "item_type_path": "u8"
+      },
+      "path_table": {
+        "path": "u8",
+        "short_type_path": "u8",
+        "ident": "u8",
+        "crate_name": null,
+        "module_path": null
+      },
+      "default": "{\"u8\":0}",
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_render::view::visibility::Visibility": {
+      "info": {
+        "kind": "enum",
+        "variants": [
+          {
+            "kind": "unit",
+            "name": "Inherited",
+            "docs": " An entity with `Visibility::Inherited` will inherit the Visibility of its [`Parent`].\n\n A root-level entity that is set to `Inherited` will be visible."
+          },
+          {
+            "kind": "unit",
+            "name": "Hidden",
+            "docs": " An entity with `Visibility::Hidden` will be unconditionally hidden."
+          },
+          {
+            "kind": "unit",
+            "name": "Visible",
+            "docs": " An entity with `Visibility::Visible` will be unconditionally visible.\n\n Note that an entity with `Visibility::Visible` will be visible regardless of whether the\n [`Parent`] entity is hidden."
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_render::view::visibility::Visibility",
+        "short_type_path": "Visibility",
+        "ident": "Visibility",
+        "crate_name": "bevy_render",
+        "module_path": "bevy_render::view::visibility"
+      },
+      "default": "{\"bevy_render::view::visibility::Visibility\":\"Inherited\"}",
+      "docs": " User indication of whether an entity is visible. Propagates down the entity hierarchy.\n\n If an entity is hidden in this way, all [`Children`] (and all of their children and so on) who\n are set to [`Inherited`](Self::Inherited) will also be hidden.\n\n This is done by the `visibility_propagate_system` which uses the entity hierarchy and\n `Visibility` to set the values of each entity's [`InheritedVisibility`] component.",
+      "traits": {
+        "component": true,
+        "resource": false
+      }
+    },
+    "bevy_sprite::sprite::SpriteImageMode": {
+      "info": {
+        "kind": "enum",
+        "variants": [
+          {
+            "kind": "unit",
+            "name": "Auto",
+            "docs": " The sprite will take on the size of the image by default, and will be stretched or shrunk if [`Sprite::custom_size`] is set."
+          },
+          {
+            "kind": "tuple",
+            "name": "Sliced",
+            "fields": [
+              {
+                "index": 0,
+                "type_path": "bevy_sprite::texture_slice::slicer::TextureSlicer",
+                "docs": null
+              }
+            ],
+            "docs": " The texture will be cut in 9 slices, keeping the texture in proportions on resize"
+          },
+          {
+            "kind": "struct",
+            "name": "Tiled",
+            "fields": [
+              {
+                "name": "tile_x",
+                "type_path": "bool",
+                "docs": " Should the image repeat horizontally"
+              },
+              {
+                "name": "tile_y",
+                "type_path": "bool",
+                "docs": " Should the image repeat vertically"
+              },
+              {
+                "name": "stretch_value",
+                "type_path": "f32",
+                "docs": " The texture will repeat when the ratio between the *drawing dimensions* of texture and the\n *original texture size* are above this value."
+              }
+            ],
+            "docs": " The texture will be repeated if stretched beyond `stretched_value`"
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_sprite::sprite::SpriteImageMode",
+        "short_type_path": "SpriteImageMode",
+        "ident": "SpriteImageMode",
+        "crate_name": "bevy_sprite",
+        "module_path": "bevy_sprite::sprite"
+      },
+      "default": null,
+      "docs": " Controls how the image is altered when scaled.",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_text::text::LineBreak": {
+      "info": {
+        "kind": "enum",
+        "variants": [
+          {
+            "kind": "unit",
+            "name": "WordBoundary",
+            "docs": " Uses the [Unicode Line Breaking Algorithm](https://www.unicode.org/reports/tr14/).\n Lines will be broken up at the nearest suitable word boundary, usually a space.\n This behavior suits most cases, as it keeps words intact across linebreaks."
+          },
+          {
+            "kind": "unit",
+            "name": "AnyCharacter",
+            "docs": " Lines will be broken without discrimination on any character that would leave bounds.\n This is closer to the behavior one might expect from text in a terminal.\n However it may lead to words being broken up across linebreaks."
+          },
+          {
+            "kind": "unit",
+            "name": "WordOrCharacter",
+            "docs": " Wraps at the word level, or fallback to character level if a word can’t fit on a line by itself"
+          },
+          {
+            "kind": "unit",
+            "name": "NoWrap",
+            "docs": " No soft wrapping, where text is automatically broken up into separate lines when it overflows a boundary, will ever occur.\n Hard wrapping, where text contains an explicit linebreak such as the escape sequence `\\n`, is still enabled."
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_text::text::LineBreak",
+        "short_type_path": "LineBreak",
+        "ident": "LineBreak",
+        "crate_name": "bevy_text",
+        "module_path": "bevy_text::text"
+      },
+      "default": null,
+      "docs": " Determines how lines will be broken when preventing text from running out of bounds.",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_ui::ui_node::JustifyContent": {
+      "info": {
+        "kind": "enum",
+        "variants": [
+          {
+            "kind": "unit",
+            "name": "Default",
+            "docs": " The items are packed in their default position as if no alignment was applied."
+          },
+          {
+            "kind": "unit",
+            "name": "Start",
+            "docs": " The items are packed towards the start of the axis."
+          },
+          {
+            "kind": "unit",
+            "name": "End",
+            "docs": " The items are packed towards the end of the axis."
+          },
+          {
+            "kind": "unit",
+            "name": "FlexStart",
+            "docs": " The items are packed towards the start of the axis, unless the flex direction is reversed;\n then the items are packed towards the end of the axis."
+          },
+          {
+            "kind": "unit",
+            "name": "FlexEnd",
+            "docs": " The items are packed towards the end of the axis, unless the flex direction is reversed;\n then the items are packed towards the start of the axis."
+          },
+          {
+            "kind": "unit",
+            "name": "Center",
+            "docs": " The items are packed along the center of the axis."
+          },
+          {
+            "kind": "unit",
+            "name": "Stretch",
+            "docs": " The items are stretched to fill the container along the axis."
+          },
+          {
+            "kind": "unit",
+            "name": "SpaceBetween",
+            "docs": " The items are distributed such that the gap between any two items is equal."
+          },
+          {
+            "kind": "unit",
+            "name": "SpaceEvenly",
+            "docs": " The items are distributed such that the gap between and around any two items is equal."
+          },
+          {
+            "kind": "unit",
+            "name": "SpaceAround",
+            "docs": " The items are distributed such that the gap between and around any two items is equal, with half-size gaps on either end."
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_ui::ui_node::JustifyContent",
+        "short_type_path": "JustifyContent",
+        "ident": "JustifyContent",
+        "crate_name": "bevy_ui",
+        "module_path": "bevy_ui::ui_node"
+      },
+      "default": "{\"bevy_ui::ui_node::JustifyContent\":\"Default\"}",
+      "docs": " Used to control how items are distributed.\n - For Flexbox containers, controls alignment of items in the main axis.\n - For CSS Grid containers, controls alignment of grid columns.\n\n <https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content>",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_transform::components::global_transform::GlobalTransform": {
+      "info": {
+        "kind": "tupleStruct",
+        "fields": [
+          {
+            "index": 0,
+            "type_path": "glam::Affine3A",
+            "docs": null
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_transform::components::global_transform::GlobalTransform",
+        "short_type_path": "GlobalTransform",
+        "ident": "GlobalTransform",
+        "crate_name": "bevy_transform",
+        "module_path": "bevy_transform::components::global_transform"
+      },
+      "default": "{\"bevy_transform::components::global_transform::GlobalTransform\":[1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0]}",
+      "docs": " [`GlobalTransform`] is an affine transformation from entity-local coordinates to worldspace coordinates.\n\n You cannot directly mutate [`GlobalTransform`]; instead, you change an entity's transform by manipulating\n its [`Transform`], which indirectly causes Bevy to update its [`GlobalTransform`].\n\n * To get the global transform of an entity, you should get its [`GlobalTransform`].\n * For transform hierarchies to work correctly, you must have both a [`Transform`] and a [`GlobalTransform`].\n   * ~You may use the [`TransformBundle`](crate::bundles::TransformBundle) to guarantee this.~\n     [`TransformBundle`](crate::bundles::TransformBundle) is now deprecated.\n     [`GlobalTransform`] is automatically inserted whenever [`Transform`] is inserted.\n\n ## [`Transform`] and [`GlobalTransform`]\n\n [`Transform`] transforms an entity relative to its parent's reference frame, or relative to world space coordinates,\n if it doesn't have a [`Parent`](bevy_hierarchy::Parent).\n\n [`GlobalTransform`] is managed by Bevy; it is computed by successively applying the [`Transform`] of each ancestor\n entity which has a Transform. This is done automatically by Bevy-internal systems in the system set\n [`TransformPropagate`](crate::TransformSystem::TransformPropagate).\n\n This system runs during [`PostUpdate`](bevy_app::PostUpdate). If you\n update the [`Transform`] of an entity in this schedule or after, you will notice a 1 frame lag\n before the [`GlobalTransform`] is updated.\n\n # Examples\n\n - [`transform`][transform_example]\n\n [transform_example]: https://github.com/bevyengine/bevy/blob/latest/examples/transforms/transform.rs",
+      "traits": {
+        "component": true,
+        "resource": false
+      }
+    },
+    "bevy_math::primitives::dim3::Cuboid": {
+      "info": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "half_size",
+            "type_path": "glam::Vec3",
+            "docs": " Half of the width, height and depth of the cuboid"
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_math::primitives::dim3::Cuboid",
+        "short_type_path": "Cuboid",
+        "ident": "Cuboid",
+        "crate_name": "bevy_math",
+        "module_path": "bevy_math::primitives::dim3"
+      },
+      "default": "{\"bevy_math::primitives::dim3::Cuboid\":{\"half_size\":[0.5,0.5,0.5]}}",
+      "docs": " A cuboid primitive, which is like a cube, except that the x, y, and z dimensions are not\n required to be the same.",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "alloc::vec::Vec<alloc::string::String>": {
+      "info": {
+        "kind": "list",
+        "item_type_path": "alloc::string::String"
+      },
+      "path_table": {
+        "path": "alloc::vec::Vec<alloc::string::String>",
+        "short_type_path": "Vec<String>",
+        "ident": "Vec",
+        "crate_name": "alloc",
+        "module_path": "alloc::vec"
+      },
+      "default": null,
+      "docs": null,
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    },
+    "bevy_color::lcha::Lcha": {
+      "info": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "lightness",
+            "type_path": "f32",
+            "docs": " The lightness channel. [0.0, 1.5]"
+          },
+          {
+            "name": "chroma",
+            "type_path": "f32",
+            "docs": " The chroma channel. [0.0, 1.5]"
+          },
+          {
+            "name": "hue",
+            "type_path": "f32",
+            "docs": " The hue channel. [0.0, 360.0]"
+          },
+          {
+            "name": "alpha",
+            "type_path": "f32",
+            "docs": " The alpha channel. [0.0, 1.0]"
+          }
+        ]
+      },
+      "path_table": {
+        "path": "bevy_color::lcha::Lcha",
+        "short_type_path": "Lcha",
+        "ident": "Lcha",
+        "crate_name": "bevy_color",
+        "module_path": "bevy_color::lcha"
+      },
+      "default": "{\"bevy_color::lcha::Lcha\":{\"lightness\":1.0,\"chroma\":0.0,\"hue\":0.0,\"alpha\":1.0}}",
+      "docs": " Color in LCH color space, with alpha\n <div>\n </div>",
+      "traits": {
+        "component": false,
+        "resource": false
+      }
+    }
+  }
+}

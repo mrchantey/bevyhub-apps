@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Bevyhub Apps</title>
+	<meta name="description" content="An amazing website">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		html,
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			color: white;
+			background-color: black;
+			/* overflow: hidden; */
+		}
+
+		a {
+			color: white;
+		}
+
+		canvas {
+			/* width: 100%;
+			max-width: 100vw; */
+			height: 50vh;
+			aspect-ratio: 16/9;
+			/* height: 50vh; */
+			/* background-color: red; */
+		}
+
+		#error-msg {
+			color: red;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Bevyhub Apps</h1>
+	<div id="error-msg"></div>
+	<nav>
+		<ul>
+			<li><a href="/">None</a></li>
+			<li><a href="?demo=bevyhub_template">Bevyhub Template</a></li>
+			<li><a href="?demo=sewb">SEWB</a></li>
+			<li><a href="?demo=fetch">Fetch</a></li>
+			<li><a href="?demo=flock">Flock</a></li>
+			<li><a href="?demo=seek">Seek</a></li>
+			<li><a href="?demo=frozen-lake-train">Froze Lake - Training</a></li>
+			<li><a href="?demo=frozen-lake-run">Froze Lake - Run</a></li>
+			<li><a href="?demo=hello-animation">Hello Animation</a></li>
+			<li><a href="?demo=hello-ml">Hello ML</a></li>
+			<li><a href="?demo=hello-world">Hello World</a></li>
+			<li><a href="?demo=seek-3d">Seek 3d</a></li>
+		</ul>
+	</nav>
+	<canvas id="bevyhub-canvas"></canvas>
+
+	<script type="module">
+
+		// will default to 'app'
+		const appLookup = {
+			'fetch': 'app_ml',
+			'hello-ml': 'app_ml',
+			'frozen-lake-run': 'app_ml',
+			'frozen-lake-train': 'app_ml',
+		}
+
+		const crateLookup = {
+			'bevyhub_template': 'bevyhub_template',
+			'sewb': 'sewb',
+			'fetch': 'beet',
+			'flock': 'beet',
+			'seek': 'beet',
+			'frozen-lake-train': 'beet',
+			'frozen-lake-run': 'beet',
+			'hello-animation': 'beet',
+			'hello-ml': 'beet',
+			'hello-world': 'beet',
+			'seek-3d': 'beet',
+		}
+
+		const sceneLookup = {
+			'bevyhub_template': [
+				'bevyhub_template/scenes/my-base-scene.json',
+				'bevyhub_template/scenes/my-beautiful-scene.json'
+			],
+			'sewb': [
+				'sewb/scenes/basics.json',
+				'sewb/scenes/wellbeing-inheritance.json',
+			],
+			'fetch': [
+				'bevyhub/scenes/ui-terminal-input.json',
+				'bevyhub/scenes/lighting-3d.json',
+				'bevyhub/scenes/ground-3d.json',
+				'beet/scenes/beet-debug.json',
+				'beet/scenes/fetch-scene.json',
+				'beet/scenes/fetch-npc.json',
+			],
+			'flock': [
+				'bevyhub/scenes/camera-2d.json',
+				'bevyhub/scenes/space-scene.json',
+				'beet/scenes/beet-debug.json',
+				'beet/scenes/flock.json',
+			],
+			'seek': [
+				'bevyhub/scenes/camera-2d.json',
+				'bevyhub/scenes/space-scene.json',
+				'beet/scenes/beet-debug.json',
+				'beet/scenes/seek.json',
+			],
+			'frozen-lake-train': [
+				'bevyhub/scenes/lighting-3d.json',
+				'beet/scenes/frozen-lake-scene.json',
+				'beet/scenes/frozen-lake-train.json',
+			],
+			'frozen-lake-run': [
+				'bevyhub/scenes/lighting-3d.json',
+				'beet/scenes/frozen-lake-scene.json',
+				'beet/scenes/frozen-lake-run.json',
+			],
+			'hello-animation': [
+				'bevyhub/scenes/ui-terminal.json',
+				'bevyhub/scenes/lighting-3d.json',
+				'bevyhub/scenes/ground-3d.json',
+				'beet/scenes/beet-debug.json',
+				'beet/scenes/hello-animation.json',
+			],
+			'hello-ml': [
+				'bevyhub/scenes/camera-2d.json',
+				'bevyhub/scenes/ui-terminal-input.json',
+				'beet/scenes/beet-debug.json',
+				'beet/scenes/hello-ml.json',
+			],
+			'hello-world': [
+				'bevyhub/scenes/camera-2d.json',
+				'bevyhub/scenes/ui-terminal.json',
+				'beet/scenes/beet-debug.json',
+				'beet/scenes/hello-world.json',
+			],
+			'seek-3d': [
+				'bevyhub/scenes/ui-terminal.json',
+				'bevyhub/scenes/lighting-3d.json',
+				'bevyhub/scenes/ground-3d.json',
+				'beet/scenes/beet-debug.json',
+				'beet/scenes/seek-3d.json',
+			]
+		}
+
+
+
+
+		const demoName = new URLSearchParams(window.location.search).get('demo');
+		const crateName = crateLookup[demoName]
+		const appName = appLookup[demoName] ?? 'app'
+		let scenesToLoad = sceneLookup[demoName]
+		if (demoName)
+			loadApp()
+
+		async function loadApp() {
+
+			const canvas = document.getElementById('bevyhub-canvas');
+
+			console.log(`Loading app..`)
+			const wasm = await import(`/${crateName}/${appName}.js`)
+				.catch((error) => {
+					document.getElementById('error-msg').innerText = error
+				})
+			await wasm.default(`/${crateName}/${appName}_bg.wasm`)
+				.catch((error) => {
+					if (!error.message.startsWith("Using exceptions for control flow,"))
+						document.getElementById('error-msg').innerText = error
+				})
+		}
+		const replicationRegistry =
+		{
+			"bevyhub_net::events::common_events::AppStartup": 0,
+			"bevyhub_net::events::common_events::AppReady": 1,
+			"bevyhub_net::events::common_events::OnUserMessage": 2,
+			"bevyhub_net::events::common_events::OnAppMessage": 3,
+			"bevyhub_scene::utils::spawn_scene_file::SpawnSceneFile": 4,
+			"bevyhub_scene::utils::spawn_scene_file::SpawnSceneFileResponse": 5,
+			"bevyhub_core::render::screenshot::SaveScreenshot": 6
+		}
+
+		function sendUserMessage(message) {
+			sendMessage("bevyhub_net::events::common_events::OnUserMessage", message)
+		}
+
+		async function sendMessage(key, payload, awaitKey) {
+			let reg_id = replicationRegistry[key]
+			if (reg_id === undefined) {
+				console.error('Unknown RegId key:', key)
+				return
+			}
+			const message = {
+				SendEvent: {
+					reg_id: replicationRegistry[key],
+					payload: {
+						Json: JSON.stringify(payload)
+					}
+				}
+			}
+			let awaiter = awaitKey
+				? awaitMessage(awaitKey)
+				: null
+			window.dispatchEvent(new CustomEvent('js-message', {
+				detail: JSON.stringify([message])
+			}))
+			if (awaiter) {
+				return await awaiter
+			}
+		}
+
+		function awaitMessage(key) {
+			return new Promise((resolve) => {
+				const listener = (event) => {
+					const messages = JSON.parse(event.detail)
+					for (const message of messages) {
+						if (message?.SendEvent?.reg_id === replicationRegistry[key]) {
+							resolve(message.SendEvent.payload.Json)
+							window.removeEventListener('wasm-message', listener)
+						}
+					}
+				}
+				window.addEventListener('wasm-message', listener)
+			})
+		}
+
+		window.addEventListener('wasm-message', async (event) => {
+			const messages = JSON.parse(event.detail)
+			for (const message of messages) {
+				if (message?.SendObserver?.reg_id === replicationRegistry["bevyhub_net::events::common_events::AppStartup"]) {
+					console.log('AppStartup')
+
+					for (const scene of scenesToLoad) {
+						await loadScene(scene)
+					}
+					console.log('All scenes sent')
+					sendUserMessage('loud and clear')
+				}
+			}
+		})
+
+		async function loadScene(name) {
+			console.log('loading scene', name)
+			const response = await fetch(`${name}`)
+			const json = await response.text()
+			const spawnPayload = {
+				format: "Json",
+				payload: json
+			}
+			let hashmap = await sendMessage(
+				"bevyhub_scene::utils::spawn_scene_file::SpawnSceneFile",
+				spawnPayload,
+				"bevyhub_scene::utils::spawn_scene_file::SpawnSceneFileResponse"
+			)
+			console.log('hashmap received:', hashmap)
+		}
+
+
+	</script>
+
+</body>
+
+</html>

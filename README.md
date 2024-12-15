@@ -1,2 +1,3 @@
-# bevyhub-apps
-Apps for various bevyhub crates.
+# Bevyhub Apps
+
+[GH Pages Site](https://mrchantey.github.io/bevyhub-apps)

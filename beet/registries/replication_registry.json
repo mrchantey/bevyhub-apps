@@ -1,0 +1,9 @@
+{
+  "bevyhub_net::events::common_events::AppStartup": 0,
+  "bevyhub_net::events::common_events::AppReady": 1,
+  "bevyhub_net::events::common_events::OnUserMessage": 2,
+  "bevyhub_net::events::common_events::OnAppMessage": 3,
+  "bevyhub_scene::utils::spawn_scene_file::SpawnSceneFile": 4,
+  "bevyhub_scene::utils::spawn_scene_file::SpawnSceneFileResponse": 5,
+  "bevyhub_core::render::screenshot::SaveScreenshot": 6
+}
